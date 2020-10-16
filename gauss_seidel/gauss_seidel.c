@@ -5,7 +5,7 @@
 #define SIGMA 0.0000001
 #define MAX 100
 
-void jacobi(float **matrix, float *b, float *solus_k, int n);
+void gauss_seidel(float **matrix, float *b, float *solus_k, int n);
 // FIXME:
 int test(float *solus_k, float *solus_k1, int n) {
   int i;
@@ -57,7 +57,7 @@ int main() {
   matrix[3][2] = 1;
   matrix[3][3] = 4;
 
-  jacobi(matrix, b, solus, LEN);
+  gauss_seidel(matrix, b, solus, LEN);
   for (i = 0; i < LEN; i++) {
     printf("%f\n", solus[i]);
   }
@@ -71,17 +71,22 @@ int main() {
   return 0;
 }
 
-void jacobi(float **matrix, float *b, float *solus_k, int n) {
+void gauss_seidel(float **matrix, float *b, float *solus_k, int n) {
   int i, j;
   int compt = 0;
   int bool = 1;
   float *solus_k1 = malloc(n * sizeof(float));
-  while (bool &&compt < MAX) {
+  while (bool && compt < MAX) {
     for (i = 0; i < n; i++) {
       solus_k1[i] = b[i];
-      for (j = 0; j < n; j++) {
-        if (j != i)
-          solus_k1[i] -= matrix[i][j] * solus_k[j];
+      for (j = 0; j < i; j++) {
+	if (i > 0)
+	  solus_k1[i] -= matrix[i][j] * solus_k1[j];
+	else
+	  solus_k1[i] -= matrix[i][j] * solus_k[j];
+      }
+      for (j = i+1; j < n; j++) {
+	solus_k1[i] -= matrix[i][j] * solus_k[j];
       }
       solus_k1[i] /= matrix[i][i];
     }
