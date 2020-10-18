@@ -1,0 +1,114 @@
+\documentclass[a4paper]{article}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{mathtools,amssymb,amsthm}
+\usepackage[top=2.5cm,bottom=2.5cm,right=2.5cm,left=2.5cm]{geometry}
+\usepackage[francais]{babel}
+\usepackage{appendix}
+
+%============header and foot============
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand\headrulewidth{1pt}
+\fancyhead[L]{\LaTeX \quad \bfseries Initiation}
+\fancyhead[R]{\includegraphics[scale=0.05]{image.png}}
+\fancyfoot[L]{CHASSAGNOL Rémi}
+\fancyfoot[R]{2019-2020}
+
+%=================code=================
+\usepackage{verbatim}
+\usepackage{listings}
+\usepackage{color}
+\usepackage[table]{xcolor}
+
+%==============code settings==========
+\definecolor{darkWhite}{rgb}{0.85,0.85,0.85}
+\lstset{
+  aboveskip=3mm,
+  belowskip=-2mm,
+  backgroundcolor=\color{darkWhite},
+  basicstyle=\footnotesize,
+  breakatwhitespace=false,
+  breaklines=true,
+  captionpos=b,
+  commentstyle=\color{red},
+  deletekeywords={...},
+  escapeinside={\%*}{*)},
+  extendedchars=true,
+  framexleftmargin=16pt,
+  framextopmargin=3pt,
+  framexbottommargin=6pt,
+  frame=tb,
+  keepspaces=true,
+  keywordstyle=\color{blue},
+  language=C,
+  morekeywords={*,...},
+  numbers=left,
+  numbersep=10pt,
+  numberstyle=\tiny\color{black},
+  rulecolor=\color{black},
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false,
+  stepnumber=1,
+  stringstyle=\color{gray},
+  tabsize=4,
+  title=\lstname,
+}
+
+\begin{document}
+
+%===========Page de guarde============
+\begin{titlepage}
+  \begin{center}
+    
+    \begin{figure}[h]
+      \centering
+      \includegraphics[scale=0.3]{logo.png}
+      \caption{logo uca}
+      \label{uca}
+    \end{figure}
+    \\[1.5cm]
+    \textsc{\LARGE Prép'ISIMA}\\[0.5cm]
+    
+    \textsc{Adresse:} campus Cézeaux, Clermont-Ferrand\\
+    \textsc{Internet:} www.uca.fr et www.isima.fr\\[0.5cm]
+
+    \begin{figure}[h]
+      \centering
+      \includegraphics[scale=0.4]{isima.png}
+      \caption{logo ISIMA}
+      \label{isima}
+    \end{figure}\\[1cm]
+    
+    {\huge \bfseries Initiation\\[0.4cm]}
+
+    \begin{figure}[h]
+      \centering
+      \includegraphics[scale=0.4]{latex.png}
+      \caption{logo latex}
+      \label{latex}
+    \end{figure}
+
+    \begin{minipage}{0.9\textwidth}
+      \begin{flushleft} \large
+        CHASSAGNOL Rémi\\
+        année 2019-2020\\[2cm]
+      \end{flushleft}
+    \end{minipage}
+
+    \begin{minipage}{0.9\textwidth}
+      \begin{flushright} \large
+        \emph{Professeur référent:} Yves-Jean DANIEL\\
+      \end{flushright}
+    \end{minipage}
+
+    \textsc{22 avril 2020}
+
+  \end{center}
+\end{titlepage}
+
+\end{document}
