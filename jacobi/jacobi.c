@@ -1,10 +1,11 @@
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
-//#include "matrix_tp2.h"
+#include "matrix_tp2.h"
 #define LEN 4
 #define SIGMA 0.0000001
 #define MAX 100
+#define EXAMPLE 0
 
 int test(float *solus_k, float *solus_k1, int n) {
   int i;
@@ -57,29 +58,26 @@ void show(float **mat, int n){
 }
 
 int main() {
-  int i, j;
+  int i;
   // init b
   float *b = malloc(LEN * sizeof(float));
   if (b == NULL)
     exit(EXIT_FAILURE);
-  for (i = 0; i < LEN; i++)
-    b[i] = 1;
   // init solus
   float *solus = malloc(LEN * sizeof(float));
   if (solus == NULL)
     exit(EXIT_FAILURE);
   for (i = 0; i < LEN; i++)
-    b[i] = 1;
+    solus[i] = 1;
   // init matrix
   float **matrix = create_mat(LEN);
-  for (i = 1; i < 10; i++) {
-    mat(matrix, LEN, i);
-    printf("\n");
-    show(matrix, LEN);
-    jacobi(matrix, b, solus, LEN);
-    for (j = 0; j < LEN; j++) {
-      printf("x_%d = %f\n", i, solus[i]);
-    }
+  // Initialize matrix and b with a pre-written axample
+  init_mat(matrix, b, LEN, EXAMPLE);
+  printf("\n");
+  show(matrix, LEN);
+  jacobi(matrix, b, solus, LEN);
+  for (i = 0; i < LEN; i++) {
+    printf("%f\n", solus[i]);
   }
   // FREE
   free(solus);

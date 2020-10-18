@@ -1,12 +1,13 @@
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include "matrix_tp2.h"
 #define LEN 4
 #define SIGMA 0.0000001
 #define MAX 100
+#define EXAMPLE 0
 
-void gauss_seidel(float **matrix, float *b, float *solus_k, int n);
-// FIXME:
+
 int test(float *solus_k, float *solus_k1, int n) {
   int i;
   float *tmp = malloc(n * sizeof(float));
@@ -20,56 +21,6 @@ int test(float *solus_k, float *solus_k1, int n) {
   return (sqrtf(s_quadra) > SIGMA);
 }
 
-int main() {
-  int i;
-  float *b = malloc(LEN * sizeof(float));
-  b[0] = 15;
-  b[1] = 15;
-  b[2] = 19;
-  b[3] = 11;
-
-  float *solus = malloc(LEN * sizeof(float));
-  // Init solus
-  solus[0] = 1;
-  solus[1] = 1;
-  solus[2] = 1;
-  solus[3] = 1;
-
-  float **matrix = (float **)malloc(LEN * sizeof(float *));
-  for (i = 0; i < LEN; i++) {
-    matrix[i] = (float *)malloc(LEN * sizeof(float));
-  }
-  // Init matrix
-  matrix[0][0] = 4;
-  matrix[0][1] = 1;
-  matrix[0][2] = 1;
-  matrix[0][3] = 0;
-  matrix[1][0] = 1;
-  matrix[1][1] = 4;
-  matrix[1][2] = 0;
-  matrix[1][3] = 1;
-  matrix[2][0] = 1;
-  matrix[2][1] = 0;
-  matrix[2][2] = 4;
-  matrix[2][3] = 1;
-  matrix[3][0] = 0;
-  matrix[3][1] = 1;
-  matrix[3][2] = 1;
-  matrix[3][3] = 4;
-
-  gauss_seidel(matrix, b, solus, LEN);
-  for (i = 0; i < LEN; i++) {
-    printf("%f\n", solus[i]);
-  }
-  // FREE
-  free(solus);
-  free(b);
-  for (i = 0; i < LEN; i++) {
-    free(matrix[i]);
-  }
-  free(matrix);
-  return 0;
-}
 
 void gauss_seidel(float **matrix, float *b, float *solus_k, int n) {
   int i, j;
@@ -97,6 +48,50 @@ void gauss_seidel(float **matrix, float *b, float *solus_k, int n) {
     }
     compt++;
   }
+  printf("Nb tours: %d\n", compt);
   // FREE
   free(solus_k1);
+}
+
+void show(float **mat, int n){
+  int i, j;
+  for (i = 0; i < n; i++) {
+    printf("|");
+    for (j = 0; j < n; j++) {
+      printf(" %f |", mat[i][j]);
+    }
+    printf("\n");
+  }
+}
+
+int main() {
+  int i;
+  // init b
+  float *b = malloc(LEN * sizeof(float));
+  if (b == NULL)
+    exit(EXIT_FAILURE);
+  // init solus
+  float *solus = malloc(LEN * sizeof(float));
+  if (solus == NULL)
+    exit(EXIT_FAILURE);
+  for (i = 0; i < LEN; i++)
+    solus[i] = 1;
+  // init matrix
+  float **matrix = create_mat(LEN);
+  // Initialize matrix and b with a pre-written axample
+  init_mat(matrix, b, LEN, EXAMPLE);
+  printf("\n");
+  show(matrix, LEN);
+  gauss_seidel(matrix, b, solus, LEN);
+  for (i = 0; i < LEN; i++) {
+    printf("%f\n", solus[i]);
+  }
+  // FREE
+  free(solus);
+  free(b);
+  for (i = 0; i < LEN; i++) {
+    free(matrix[i]);
+  }
+  free(matrix);
+  return 0;
 }
