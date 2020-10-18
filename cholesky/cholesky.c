@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include "matrix.h"
 #define LEN 3
+#define EXAMPLE 1
 
 void make_R(float **matrix, float **r, int n) {
   int i, j, k;   // loop var
@@ -45,15 +47,8 @@ void solver_cholesky(float **matrix, float *solus_x, float *b, int n) {
   int i, j;
   float *solus_y = malloc(n * sizeof(float));
   /*Creation of the matrix  R:*/
-  float **r = malloc(n * sizeof(float *));
-  for (i = 0; i < n; i++) {
-    r[i] = malloc(n * sizeof(float));
-  }
-  for (i = 0; i < n; i++) {
-    for (j = 0; j < n; j++) {
-      r[i][j] = 0;
-    }
-  }
+  float **r = create_mat(n);
+  mat_0(r, n);
   make_R(matrix, r, n);
   /*************************************************************************/
   /*Resolution de R^T * y = b*/
@@ -80,30 +75,31 @@ void solver_cholesky(float **matrix, float *solus_x, float *b, int n) {
   free(r);
 }
 
+void show(float **matrix, int n){
+  int i, j;
+  for (i = 0; i < n; i++) {
+    printf("|");
+    for (j = 0; j < n; j++) {
+      printf(" %f |", matrix[i][j]);
+    }
+    printf("\n");
+  }
+}
+
 int main() {
   int i;
   float *solus = malloc(LEN * sizeof(float));
+  if (solus == NULL)
+    exit(EXIT_FAILURE);
   float *b = malloc(LEN * sizeof(float));
-  // alloc table matrix
-  float **matrix = (float **)malloc(LEN * sizeof(float *));
+  if (b == NULL)
+    exit(EXIT_FAILURE);
   for (i = 0; i < LEN; i++) {
-    matrix[i] = (float *)malloc(LEN * sizeof(float));
+    b[i] = 1;
   }
-  // TODO: Init b properly
-  b[0] = 1;
-  b[1] = 1;
-  b[2] = 1;
-  // TODO: Init matrix properly
-  matrix[0][0] = 64;
-  matrix[0][1] = 40;
-  matrix[0][2] = 24;
-  matrix[1][0] = 40;
-  matrix[1][1] = 29;
-  matrix[1][2] = 17;
-  matrix[2][0] = 24;
-  matrix[2][1] = 17;
-  matrix[2][2] = 19;
-
+  float **matrix = create_mat(LEN);
+  mat(matrix, LEN, EXAMPLE);
+  show(matrix, LEN);
   solver_cholesky(matrix, solus, b, LEN);
   // Print solutions
   for (i = 0; i < LEN; i++) {

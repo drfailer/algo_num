@@ -18,7 +18,7 @@ void bords_carre(float **tab, int n){
       if (i == j)
 	tab[i-1][j-1] = 1;
       else if (i == 1 || j == 1)
-	tab[i-1][j-1] = 2 << (n-j);
+	tab[i-1][j-1] = powf(2, 1-j);
       else
 	tab[i-1][j-1] = 0;
     }
@@ -111,7 +111,6 @@ void moler(float **tab, int n){
 
 void mat(float **mat, int n, int type_mat){
   switch (type_mat) {
-  case 0: mat_0(mat, n); break;
   case 1: bords_carre(mat, n); break;
   case 2: ding_dong(mat, n); break;
   case 3: franc(mat, n); break;

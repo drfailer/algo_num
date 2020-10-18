@@ -9,14 +9,22 @@
 \usepackage[francais]{babel}
 \usepackage{appendix}
 
+%================image=================
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+\renewcommand{\listfigurename}{Table des figures}
+
 %============header and foot============
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \renewcommand\headrulewidth{1pt}
 \fancyhead[L]{\LaTeX \quad \bfseries Initiation}
-\fancyhead[R]{\includegraphics[scale=0.05]{image.png}}
-\fancyfoot[L]{CHASSAGNOL Rémi}
+\fancyhead[R]{\includegraphics[scale=0.05]{./img/prepisima.png}}
+\fancyfoot[L]{SABIER Corentin et CHASSAGNOL Rémi}
 \fancyfoot[R]{2019-2020}
+
+%=================other================
+\renewcommand{\contentsname}{Table des matières}
 
 %=================code=================
 \usepackage{verbatim}
@@ -25,8 +33,9 @@
 \usepackage[table]{xcolor}
 
 %==============code settings==========
-\definecolor{darkWhite}{rgb}{0.85,0.85,0.85}
+\definecolor{darkWhite}{rgb}{1,1,1}
 \lstset{
+  mathescape,
   aboveskip=3mm,
   belowskip=-2mm,
   backgroundcolor=\color{darkWhite},
@@ -84,31 +93,171 @@
       \label{isima}
     \end{figure}\\[1cm]
     
-    {\huge \bfseries Initiation\\[0.4cm]}
+    {\huge \bfseries Algorithmique Numérique\\[0.4cm]}
 
     \begin{figure}[h]
       \centering
       \includegraphics[scale=0.4]{latex.png}
-      \caption{logo latex}
-      \label{latex}
+      \caption{logo }
     \end{figure}
 
     \begin{minipage}{0.9\textwidth}
       \begin{flushleft} \large
-        CHASSAGNOL Rémi\\
-        année 2019-2020\\[2cm]
+        SABIER Corentin et CHASSAGNOL Rémi\\
+        année 2020-2021\\[2cm]
       \end{flushleft}
     \end{minipage}
 
     \begin{minipage}{0.9\textwidth}
       \begin{flushright} \large
-        \emph{Professeur référent:} Yves-Jean DANIEL\\
+        \emph{Professeur:} CHORFI amina\\
       \end{flushright}
     \end{minipage}
 
-    \textsc{22 avril 2020}
+    \textsc{24 octobre 2020}
 
   \end{center}
 \end{titlepage}
+
+\clearpage
+
+\tableofcontents
+
+\clearpage
+
+\section*{Algorithmiques directes}
+
+\subsection*{Gauss}
+
+\subsection*{Cholesky}
+
+\subsubsection{Principe}
+
+Le principe de cette méthode est de trouver une matrice $R$ telles que $A =
+R^{T} * R$ où $R$ est une matrice triangulaire supérieure et $R^{T}$ est la
+matrice transposée de R. Le système $Ax = b$ peut donc se diviser en deux
+sous-systèmes $R^{T}y = b$ et $Rx = y$. Cette méthode est légèrement plus rapide
+que celle de Gauss avec une complexité de $\frac{n^{3}}{3}$ au lieu de
+$\frac{2n^{3}}{3}$, cependant elle nécessite que la matrice soit définie
+positive.
+
+\subsubsection{L'Algorithme}
+
+L'algorithme qui permet de trouver la matrice $R$ est le suivant:
+
+\begin{lstlisting}
+  Pour $i$ allant de $1$ a $n$:
+      $s = a_{ii} - \sum_{j=1}^{i-1}r_{ji}^{2}$
+      Si $s \leqslant 0$ alors:
+          arrêt(la matrice n'est pas définie positive)
+      Sinon
+         $r_{ii} = \sqrt{s}$
+         Pour $j$ allant de $i+1$ a $n$:
+            $r_{ij} = \frac{a_{ij} - \sum_{k=1}^{i-1}}{r_{ii}}$
+\end{lstlisting}
+
+Ensuite il suffit de résoudre les deux sous-systèmes ce qui ce fait facilement
+car la matrice est triangulaire.
+
+\subsubsection{Implémentation en C}
+
+Dans la fonction \textit{main} on initialise un matrice de taille
+\textsc{LEN} qui est une constante pré-processeur. Les valeurs dans la matrice
+dépendent de la constante \textsc{EXAMPLE} qui permet de déterminer
+l’initialisation de la matrice via une fonction qui se situe dans le fichier
+\textit{matrix.c}. Il y a en tout 8 matrices de testes qui sont celle demandé
+dans la fiche de TP (chaque fonction remplit le tableau en fonction
+de la définition de la matrice).
+
+\begin{lstlisting}
+  float *solus = malloc(LEN * sizeof(float));
+  if (solus == NULL)
+    exit(EXIT_FAILURE);
+  float *b = malloc(LEN * sizeof(float));
+  if (b == NULL)
+    exit(EXIT_FAILURE);
+  for (i = 0; i < LEN; i++) {
+    b[i] = 1;
+  }
+  float **matrix = create_mat(LEN);
+  mat(matrix, LEN, EXAMPLE);
+  show(matrix, LEN);
+  solver_cholesky(matrix, solus, b, LEN);
+\end{lstlisting}
+
+Ensuite on calcule la matrice $R$ (le tableau à deux dimensions \textit{r}) à
+l'aide de la fonction nommée \textsc{make\_R} qui suit l'algorithme ci-dessus.
+
+\begin{lstlisting}
+void make_R(float **matrix, float **r, int n) {
+  int i, j, k;   // loop var
+  float sum = 0; // Used to calculate the sum of r_ki*r_kj
+  float s;
+  for (i = 0; i < n; i++) {
+    s = matrix[i][i];
+    for (j = 0; j < i; j++) {
+      s -= r[j][i] * r[j][i];
+    }
+    if (s <= 0) {
+      printf("La matrice n'est pas définie positive\n");
+      exit(EXIT_FAILURE);
+    } else {
+      r[i][i] = sqrtf(s);
+      for (j = (i + 1); j < n; j++) {
+        sum = 0;
+        for (k = 0; k < i; k++) {
+          sum += r[k][i] * r[k][j];
+        }
+        r[i][j] = (matrix[i][j] - sum) / r[i][i];
+      }
+    }
+  }
+}
+\end{lstlisting}
+
+Enfin la fonction \textsc{solver\_cholesky} résout les deux sous-systèmes de la
+même manière qu'avec \textit{Gauss} sauf que les $a_{ii}$ ne sont pas forcement
+égaux à 1 d'où la division pas $a_{ii}$. De plus, dans le premier sous-système
+la matrice $R^{T}$ est triangulaire inférieure, la résolution se fait donc en
+commencent par calculer la valeur de la première inconnue.
+
+\begin{lstlisting}
+void solver_cholesky(float **matrix, float *solus_x, float *b, int n) {
+  int i, j;
+  float *solus_y = malloc(n * sizeof(float));
+  /*Creation of the matrix  R:*/
+  float **r = create_mat(n);
+  mat_0(r, n);
+  make_R(matrix, r, n);
+  /*Resolution de R^T * y = b*/
+  transpose(r, n);
+  for (i = 0; i < n; i++) {
+    for (j = 0; j < i; j++) {
+      b[i] -= solus_y[j] * r[i][j];
+    }
+    solus_y[i] = b[i] / r[i][i];
+  }
+  /*Solving R * x = y*/
+  transpose(r, n);
+  for (i = (n - 1); i >= 0; i--) {
+    for (j = (n - 1); j > i; j--) {
+      solus_y[i] -= solus_x[j] * r[i][j];
+    }
+    solus_x[i] = solus_y[i] / r[i][i];
+  }
+  /*FREE*/
+  free(solus_y);
+  for (i = 0; i < n; i++) {
+    free(r[i]);
+  }
+  free(r);
+}
+\end{lstlisting}
+
+\section*{algorithmes itératifs}
+
+\subsection*{Jacobi}
+
+\subsection*{Gauss-seidel}
 
 \end{document}
