@@ -1,9 +1,9 @@
+#include "matrix.h"
+#include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
-#include "matrix.h"
-#define LEN 3
-#define EXAMPLE 1
+#define LEN 4
+#define EXAMPLE 9
 
 void make_R(float **matrix, float **r, int n) {
   int i, j, k;   // loop var

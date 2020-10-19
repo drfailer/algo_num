@@ -18,10 +18,10 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \renewcommand\headrulewidth{1pt}
-\fancyhead[L]{\LaTeX \quad \bfseries Initiation}
+\fancyhead[L]{\bfseries Algorithmique Numérique}
 \fancyhead[R]{\includegraphics[scale=0.05]{./img/prepisima.png}}
 \fancyfoot[L]{SABIER Corentin et CHASSAGNOL Rémi}
-\fancyfoot[R]{2019-2020}
+\fancyfoot[R]{2020-2021}
 
 %=================other================
 \renewcommand{\contentsname}{Table des matières}
@@ -34,16 +34,18 @@
 
 %==============code settings==========
 \definecolor{darkWhite}{rgb}{1,1,1}
+\definecolor{myred}{rgb}{1,0.22,0.22}
+\definecolor{mypurple}{rgb}{0.74,0.36,0.97}
 \lstset{
   mathescape,
   aboveskip=3mm,
   belowskip=-2mm,
   backgroundcolor=\color{darkWhite},
-  basicstyle=\footnotesize,
+  basicstyle=\ttfamily\footnotesize,
   breakatwhitespace=false,
   breaklines=true,
   captionpos=b,
-  commentstyle=\color{red},
+  commentstyle=\color{myred},
   deletekeywords={...},
   escapeinside={\%*}{*)},
   extendedchars=true,
@@ -52,7 +54,7 @@
   framexbottommargin=6pt,
   frame=tb,
   keepspaces=true,
-  keywordstyle=\color{blue},
+  keywordstyle=\color{mypurple},
   language=C,
   morekeywords={*,...},
   numbers=left,
@@ -76,29 +78,19 @@
     
     \begin{figure}[h]
       \centering
-      \includegraphics[scale=0.3]{logo.png}
+      \includegraphics[scale=0.3]{./img/logo.png}
       \caption{logo uca}
       \label{uca}
     \end{figure}
     \\[1.5cm]
-    \textsc{\LARGE Prép'ISIMA}\\[0.5cm]
-    
-    \textsc{Adresse:} campus Cézeaux, Clermont-Ferrand\\
-    \textsc{Internet:} www.uca.fr et www.isima.fr\\[0.5cm]
-
-    \begin{figure}[h]
-      \centering
-      \includegraphics[scale=0.4]{isima.png}
-      \caption{logo ISIMA}
-      \label{isima}
-    \end{figure}\\[1cm]
+    \textsc{\LARGE TP}\\[0.5cm]
     
     {\huge \bfseries Algorithmique Numérique\\[0.4cm]}
 
     \begin{figure}[h]
       \centering
-      \includegraphics[scale=0.4]{latex.png}
-      \caption{logo }
+      \includegraphics[scale=0.2]{./img/cormen.jpg}
+      \caption{Cormen}
     \end{figure}
 
     \begin{minipage}{0.9\textwidth}
@@ -110,7 +102,7 @@
 
     \begin{minipage}{0.9\textwidth}
       \begin{flushright} \large
-        \emph{Professeur:} CHORFI amina\\
+        \emph{Professeur:} CHORFI Amina\\
       \end{flushright}
     \end{minipage}
 
@@ -125,11 +117,11 @@
 
 \clearpage
 
-\section*{Algorithmiques directes}
+\section{Algorithmiques directes}
 
-\subsection*{Gauss}
+\subsection{Gauss}
 
-\subsection*{Cholesky}
+\subsection{Cholesky}
 
 \subsubsection{Principe}
 
@@ -149,7 +141,7 @@ L'algorithme qui permet de trouver la matrice $R$ est le suivant:
   Pour $i$ allant de $1$ a $n$:
       $s = a_{ii} - \sum_{j=1}^{i-1}r_{ji}^{2}$
       Si $s \leqslant 0$ alors:
-          arrêt(la matrice n'est pas définie positive)
+          arrêt(la matrice n\'est pas définie positive)
       Sinon
          $r_{ii} = \sqrt{s}$
          Pour $j$ allant de $i+1$ a $n$:
@@ -159,7 +151,7 @@ L'algorithme qui permet de trouver la matrice $R$ est le suivant:
 Ensuite il suffit de résoudre les deux sous-systèmes ce qui ce fait facilement
 car la matrice est triangulaire.
 
-\subsubsection{Implémentation en C}
+\subsubsection{Les Variables}
 
 Dans la fonction \textit{main} on initialise un matrice de taille
 \textsc{LEN} qui est une constante pré-processeur. Les valeurs dans la matrice
@@ -185,8 +177,14 @@ de la définition de la matrice).
   solver_cholesky(matrix, solus, b, LEN);
 \end{lstlisting}
 
+\subsubsection{Calcule de la matrice R}
+
 Ensuite on calcule la matrice $R$ (le tableau à deux dimensions \textit{r}) à
-l'aide de la fonction nommée \textsc{make\_R} qui suit l'algorithme ci-dessus.
+l'aide de la fonction nommée \textsc{make\_R} qui suit l'algorithme ci-dessus. A
+noter que cette fonction renvoi une erreur si la matrice en entrée n'est pas
+définie positive ce qui stop le programme car le système n'est pas résolvable
+avec cette méthode (en fait si la matrice n'est pas définie positive, la matrice
+$R$ n'existe pas).
 
 \begin{lstlisting}
 void make_R(float **matrix, float **r, int n) {
@@ -215,9 +213,11 @@ void make_R(float **matrix, float **r, int n) {
 }
 \end{lstlisting}
 
+\subsubsection{Résolution des sous-systèmes}
+
 Enfin la fonction \textsc{solver\_cholesky} résout les deux sous-systèmes de la
 même manière qu'avec \textit{Gauss} sauf que les $a_{ii}$ ne sont pas forcement
-égaux à 1 d'où la division pas $a_{ii}$. De plus, dans le premier sous-système
+égaux à 1 d'où la division pas $a_{ii}$. De plus, dans le premier sous-système,
 la matrice $R^{T}$ est triangulaire inférieure, la résolution se fait donc en
 commencent par calculer la valeur de la première inconnue.
 
@@ -225,7 +225,7 @@ commencent par calculer la valeur de la première inconnue.
 void solver_cholesky(float **matrix, float *solus_x, float *b, int n) {
   int i, j;
   float *solus_y = malloc(n * sizeof(float));
-  /*Creation of the matrix  R:*/
+  /*Création de  R:*/
   float **r = create_mat(n);
   mat_0(r, n);
   make_R(matrix, r, n);
@@ -237,7 +237,7 @@ void solver_cholesky(float **matrix, float *solus_x, float *b, int n) {
     }
     solus_y[i] = b[i] / r[i][i];
   }
-  /*Solving R * x = y*/
+  /*Résolution de R * x = y*/
   transpose(r, n);
   for (i = (n - 1); i >= 0; i--) {
     for (j = (n - 1); j > i; j--) {
@@ -254,10 +254,143 @@ void solver_cholesky(float **matrix, float *solus_x, float *b, int n) {
 }
 \end{lstlisting}
 
-\section*{algorithmes itératifs}
+A noter que cette fonction a pour effet de bord de modifier le vecteur
+\textbf{b} qui contient au départ les solution. Ce n'est pas problématique dans
+ce cas car \textbf{b} n'est pas réutilisé dans la suite du programme, en
+revanche si c'était le cas, il faudrait utiliser une variable tampon.
 
-\subsection*{Jacobi}
+Cette fonction fait appelle à plusieurs autres fonctions:
 
-\subsection*{Gauss-seidel}
+\begin{itemize}
+\item \textsc{create\_mat} qui retourne un tableau à deux dimensions de taille n
+\item \textsc{mat\_0} qui remplit un tableau à deux dimensions de 0
+\item \textsc{make\_R} vue ci dessus
+\item \textsc{transpose} qui transpose la matrice qui lui est donnée en argument
+\end{itemize}
+
+Observons plus en détail la résolution du premier sous-système:
+
+\begin{lstlisting}
+  for (i = 0; i < n; i++) {
+    for (j = 0; j < i; j++) {
+      b[i] -= solus_y[j] * r[i][j];
+    }
+    solus_y[i] = b[i] / r[i][i];
+  }
+\end{lstlisting}
+
+Voici la matrice r (après avoir été transposé):\\
+
+\begin{vmatrix}
+  a_{11} & 0 & \cdots & \cdots & 0\\
+  a_{21} & a_{22} & 0 & \cdots & 0\\
+  \vdots & \cdots & \ddots & 0 & 0\\
+  a_{n1} & \cdots & \cdots & \cdots & a_{nn}\\
+\end{vmatrix}\\
+
+Nous résolvons $Ry = b$ donc:
+
+\[y_{i} = \frac{b_{i} - \sum_{j=1}^{i}}{a_{ii}}\]
+
+Ce qui se fait à l'aide des deux boucles ci-dessus.
+
+\subsubsection{Les Tests}
+
+\begin{itemize}
+\item Bord \\
+  \includegraphics[scale=0.5]{./img/cholesky/bord.png}
+\item Ding Dong \\
+  \includegraphics[scale=0.5]{./img/cholesky/ding_dong.png}
+\item Franc \\
+  \includegraphics[scale=0.5]{./img/cholesky/franc.png}
+\item Hilbert - \\
+  \includegraphics[scale=0.5]{./img/cholesky/hilbert_1.png}
+\item Hilbert + \\
+  \includegraphics[scale=0.5]{./img/cholesky/hilbert_2.png}
+\item kms \\
+  \includegraphics[scale=0.5]{./img/cholesky/kms.png}
+\item Lehmer \\
+  \includegraphics[scale=0.5]{./img/cholesky/lehmer.png}
+\item Lotkin \\
+  \includegraphics[scale=0.5]{./img/cholesky/lotkin.png}
+\item Moler \\
+  \includegraphics[scale=0.5]{./img/cholesky/moler.png}
+\end{itemize}
+
+\subsection{Conclusion sur les méthodes de résolution directes}
+
+
+
+\section{algorithmes itératifs}
+
+Les algorithmes itératifs sont des algorithmes qui vont trouver une solution de
+plus en plus précise à chaque itération. Ils partent d'un point de départ
+arbitraire (un vecteur arbitraire) et vont converger vers la solution du
+système.
+
+\subsection{Jacobi}
+
+\subsubsection{Principe}
+
+Cet algorithme détermine les solutions du système $Ax = b$ en utilisant la
+formule suivante:
+
+\[x_{i}^{(k+1)} = \frac{b_{i} - \sum_{j=1}^{i-1}a_{ij}x_{j}^{(k)} -
+  \sum_{j=i+1}^{n}a_{ij}x_{j}^{(k)}}{a_{ii}}\]
+
+A chaque tours de boucle, l'algorithme calcule le nouveau vecteur $x^{(k+1)}$ en
+utilisant la solution $x^{(k)}$ qu'il a calculé à l'itération précédente (ou le
+vecteur arbitraire pour le premier tour). L'algorithme s'arrête quand la
+solution trouvée est convenable $\parallel x^{(k+1)} - x^{(k)} \parallel \leqslant \varepsilon$ (ou $\varepsilon$ est la précision choisit) ou quand il a
+fait un nombre de tours pré-déterminer (pour éviter les boucles infinie si la
+méthode ne converge pas).
+
+\subsubsection{L'algorithme}
+
+\begin{lstlisting}
+  Tant que $\varepsilon^{(k)} \geqslant \varepsilon$:
+      $x_{i}^{(k+1)} = \frac{b_{i} - \sum_{j=1}^{i-1}a_{ij}x_{j}^{(k)} -
+    \sum_{j=i+1}^{n}a_{ij}x_{j}^{(k)}}{a_{ii}}$
+      $\varepsilon^{(k+1)} = \parallel x^{(k+1)} - x^{(k)} \parallel$
+\end{lstlisting}
+
+\subsubsection{Implémentation en C}
+
+Les variables sont initialisées de la même façon que dans les méthodes directes
+vues précédemment. La fonction qui calcule les solutions est la suivante:
+
+\begin{lstlisting}
+void jacobi(float **matrix, float *b, float *solus_k, int n) {
+  int i, j;
+  int compt = 0;
+  int bool = 1;
+  float *solus_k1 = malloc(n * sizeof(float));
+  while (bool && compt < MAX) {
+    for (i = 0; i < n; i++) {
+      solus_k1[i] = b[i];
+      for (j = 0; j < n; j++) {
+        if (j != i)
+          solus_k1[i] -= matrix[i][j] * solus_k[j];
+      }
+      solus_k1[i] /= matrix[i][i];
+    }
+    bool = test(solus_k1, solus_k, n);
+    for (i = 0; i < n; i++) {
+      solus_k[i] = solus_k1[i];
+    }
+    compt++;
+  }
+  printf("Nb tours: %d\n", compt);
+  // FREE
+  free(solus_k1);
+}
+\end{lstlisting}
+
+Cette fonction utilise le même principe que l'algorithme ci dessus, elle
+fait appel à une fonction \textit{test} qui retourne $\parallel x^{(k+1)} -
+x^{(k)} \parallel \leqslant \varepsilon$ qui détermine l'arrêt (où sinon la
+fonction s'arrête d'itérer à un nombre de tours maximum).
+
+\subsection{Gauss-seidel}
 
 \end{document}
