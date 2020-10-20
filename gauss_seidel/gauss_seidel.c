@@ -1,12 +1,11 @@
+#include "matrix_tp2.h"
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "matrix_tp2.h"
 #define LEN 4
 #define SIGMA 0.0000001
 #define MAX 100
-#define EXAMPLE 0
-
+#define EXAMPLE 2
 
 int test(float *solus_k, float *solus_k1, int n) {
   int i;
@@ -21,30 +20,25 @@ int test(float *solus_k, float *solus_k1, int n) {
   return (sqrtf(s_quadra) > SIGMA);
 }
 
-
 void gauss_seidel(float **matrix, float *b, float *solus_k, int n) {
   int i, j;
   int compt = 0;
   int bool = 1;
   float *solus_k1 = malloc(n * sizeof(float));
-  while (bool && compt < MAX) {
+  while (bool &&compt < MAX) {
     for (i = 0; i < n; i++) {
       solus_k1[i] = b[i];
       for (j = 0; j < i; j++) {
-	if (i > 0)
-	  solus_k1[i] -= matrix[i][j] * solus_k1[j];
-	else
-	  solus_k1[i] -= matrix[i][j] * solus_k[j];
+        solus_k1[i] -= matrix[i][j] * solus_k1[j];
       }
-      for (j = i+1; j < n; j++) {
-	solus_k1[i] -= matrix[i][j] * solus_k[j];
+      for (j = i + 1; j < n; j++) {
+        solus_k1[i] -= matrix[i][j] * solus_k[j];
       }
       solus_k1[i] /= matrix[i][i];
     }
     bool = test(solus_k1, solus_k, n);
     for (i = 0; i < n; i++) {
-      solus_k[i] = solus_k1[i]; // At the end of the execution, solus_k contain
-                                // the solutions
+      solus_k[i] = solus_k1[i];
     }
     compt++;
   }
@@ -76,9 +70,9 @@ int main() {
     exit(EXIT_FAILURE);
   for (i = 0; i < LEN; i++)
     solus[i] = 1;
-  // init matrix
+  // alloc matrix
   float **matrix = create_mat(LEN);
-  // Initialize matrix and b with a pre-written axample
+  // Initialise matrix en fonction de l'exemple choisit
   init_mat(matrix, b, LEN, EXAMPLE);
   printf("\n");
   show(matrix, LEN);

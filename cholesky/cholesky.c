@@ -45,6 +45,7 @@ void transpose(float **matrix, int n) {
 
 void solver_cholesky(float **matrix, float *solus_x, float *b, int n) {
   int i, j;
+  float tmp;
   float *solus_y = malloc(n * sizeof(float));
   /*Creation of the matrix  R:*/
   float **r = create_mat(n);
@@ -54,10 +55,11 @@ void solver_cholesky(float **matrix, float *solus_x, float *b, int n) {
   /*Resolution de R^T * y = b*/
   transpose(r, n);
   for (i = 0; i < n; i++) {
+    tmp = b[i];
     for (j = 0; j < i; j++) {
-      b[i] -= solus_y[j] * r[i][j];
+      tmp -= solus_y[j] * r[i][j];
     }
-    solus_y[i] = b[i] / r[i][i];
+    solus_y[i] = tmp / r[i][i];
   }
   /*Solving R * x = y*/
   transpose(r, n);

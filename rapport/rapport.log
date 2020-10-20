@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.7.26)  19 OCT 2020 18:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.7.26)  20 OCT 2020 17:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -466,76 +466,16 @@ This may cause the page layout to be inconsistent, however.
 
  <./img/prepisima.png>]
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
-40.
+39.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-
-! Package inputenc Error: Invalid UTF-8 byte sequence.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.144           arrêt(
-                       la matrice n\'est pas définie positive)
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-! Package inputenc Error: Invalid UTF-8 byte "AA.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.144           arrêt(
-                       la matrice n\'est pas définie positive)
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-! Package inputenc Error: Invalid UTF-8 byte sequence.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.144 ...   arrêt(la matrice n\'est pas définie 
-                                                  positive)
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-! Package inputenc Error: Invalid UTF-8 byte "A9.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.144 ...   arrêt(la matrice n\'est pas définie 
-                                                  positive)
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
 File: ./img/prepisima.png Graphic file (type png)
 <use ./img/prepisima.png>
-Package pdftex.def Info: ./img/prepisima.png  used on input line 196.
+Package pdftex.def Info: ./img/prepisima.png  used on input line 195.
 (pdftex.def)             Requested size: 56.6148pt x 13.30046pt.
-[2
+ [2
 
 ]
 
@@ -545,7 +485,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.200       printf("La matrice n'est pas définie 
+l.199       printf("La matrice n'est pas définie 
                                                   positive\n");
 The document does not appear to be in UTF-8 encoding.
 Try adding \UseRawInputEncoding as the first line of the file
@@ -560,68 +500,8 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.200       printf("La matrice n'est pas définie 
+l.199       printf("La matrice n'est pas définie 
                                                   positive\n");
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-! Package inputenc Error: Invalid UTF-8 byte sequence.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.228   /*Création 
-                    de  R:*/
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-! Package inputenc Error: Invalid UTF-8 byte "A9.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.228   /*Création 
-                    de  R:*/
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-! Package inputenc Error: Invalid UTF-8 byte sequence.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.240   /*Résolution 
-                      de R * x = y*/
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-! Package inputenc Error: Invalid UTF-8 byte "A9.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.240   /*Résolution 
-                      de R * x = y*/
 The document does not appear to be in UTF-8 encoding.
 Try adding \UseRawInputEncoding as the first line of the file
 or specify an encoding such as \usepackage [latin1]{inputenc}
@@ -630,17 +510,17 @@ Alternatively, save the file in UTF-8 using your editor or another tool
 
 File: ./img/prepisima.png Graphic file (type png)
 <use ./img/prepisima.png>
-Package pdftex.def Info: ./img/prepisima.png  used on input line 268.
+Package pdftex.def Info: ./img/prepisima.png  used on input line 265.
 (pdftex.def)             Requested size: 56.6148pt x 13.30046pt.
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 282--283
+Underfull \hbox (badness 10000) in paragraph at lines 278--279
 
  []
 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.284 \begin{vmatrix}
+l.280 \begin{vmatrix}
                      
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -648,7 +528,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.289 \end{vmatrix}
+l.285 \end{vmatrix}
                    \\
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -657,115 +537,135 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 284--290
+Underfull \hbox (badness 10000) in paragraph at lines 280--286
 
  []
 
-<./img/cholesky/bord.png, id=51, 363.3575pt x 154.5775pt>
+<./img/cholesky/bord.png, id=50, 363.3575pt x 154.5775pt>
 File: ./img/cholesky/bord.png Graphic file (type png)
 <use ./img/cholesky/bord.png>
 Package pdftex.def Info: ./img/cholesky/bord.png  used on input line 301.
 (pdftex.def)             Requested size: 181.6783pt x 77.28854pt.
-<./img/cholesky/ding_dong.png, id=52, 387.4475pt x 96.36pt>
+<./img/cholesky/ding_dong.png, id=51, 387.4475pt x 96.36pt>
 File: ./img/cholesky/ding_dong.png Graphic file (type png)
 <use ./img/cholesky/ding_dong.png>
-Package pdftex.def Info: ./img/cholesky/ding_dong.png  used on input line 303.
+Package pdftex.def Info: ./img/cholesky/ding_dong.png  used on input line 308.
 (pdftex.def)             Requested size: 193.72327pt x 48.17987pt.
-<./img/cholesky/franc.png, id=53, 361.35pt x 153.57375pt>
+<./img/cholesky/franc.png, id=52, 361.35pt x 153.57375pt>
 File: ./img/cholesky/franc.png Graphic file (type png)
 <use ./img/cholesky/franc.png>
-Package pdftex.def Info: ./img/cholesky/franc.png  used on input line 305.
+Package pdftex.def Info: ./img/cholesky/franc.png  used on input line 312.
 (pdftex.def)             Requested size: 180.67456pt x 76.78668pt.
-<./img/cholesky/hilbert_1.png, id=54, 362.35374pt x 154.5775pt>
-File: ./img/cholesky/hilbert_1.png Graphic file (type png)
-<use ./img/cholesky/hilbert_1.png>
-Package pdftex.def Info: ./img/cholesky/hilbert_1.png  used on input line 307.
-(pdftex.def)             Requested size: 181.17642pt x 77.28854pt.
-<./img/cholesky/hilbert_2.png, id=55, 364.36125pt x 153.57375pt>
-File: ./img/cholesky/hilbert_2.png Graphic file (type png)
-<use ./img/cholesky/hilbert_2.png>
-Package pdftex.def Info: ./img/cholesky/hilbert_2.png  used on input line 309.
-(pdftex.def)             Requested size: 182.18018pt x 76.78668pt.
 File: ./img/prepisima.png Graphic file (type png)
 <use ./img/prepisima.png>
-Package pdftex.def Info: ./img/prepisima.png  used on input line 310.
+Package pdftex.def Info: ./img/prepisima.png  used on input line 326.
 (pdftex.def)             Requested size: 56.6148pt x 13.30046pt.
 [4 <./img/cholesky/bord.png> <./img/cholesky/ding_dong.png> <./img/cholesky/fra
-nc.png> <./img/cholesky/hilbert_1.png>]
-<./img/cholesky/kms.png, id=60, 362.35374pt x 99.37125pt>
-File: ./img/cholesky/kms.png Graphic file (type png)
-<use ./img/cholesky/kms.png>
-Package pdftex.def Info: ./img/cholesky/kms.png  used on input line 311.
-(pdftex.def)             Requested size: 181.17642pt x 49.6855pt.
-<./img/cholesky/lehmer.png, id=61, 364.36125pt x 154.5775pt>
-File: ./img/cholesky/lehmer.png Graphic file (type png)
-<use ./img/cholesky/lehmer.png>
-Package pdftex.def Info: ./img/cholesky/lehmer.png  used on input line 313.
-(pdftex.def)             Requested size: 182.18018pt x 77.28854pt.
-<./img/cholesky/lotkin.png, id=62, 363.3575pt x 97.36375pt>
-File: ./img/cholesky/lotkin.png Graphic file (type png)
-<use ./img/cholesky/lotkin.png>
-Package pdftex.def Info: ./img/cholesky/lotkin.png  used on input line 315.
-(pdftex.def)             Requested size: 181.6783pt x 48.68175pt.
-<./img/cholesky/moler.png, id=63, 388.45125pt x 154.5775pt>
-File: ./img/cholesky/moler.png Graphic file (type png)
-<use ./img/cholesky/moler.png>
-Package pdftex.def Info: ./img/cholesky/moler.png  used on input line 317.
-(pdftex.def)             Requested size: 194.22514pt x 77.28854pt.
+nc.png>]
 File: ./img/prepisima.png Graphic file (type png)
 <use ./img/prepisima.png>
-Package pdftex.def Info: ./img/prepisima.png  used on input line 350.
+Package pdftex.def Info: ./img/prepisima.png  used on input line 401.
 (pdftex.def)             Requested size: 56.6148pt x 13.30046pt.
- [5 <./img/cholesky/hilbert_2.png> <./img/cholesky/kms.png> <./img/cholesky/leh
-mer.png> <./img/cholesky/lotkin.png> <./img/cholesky/moler.png>]
+ [5]
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <8> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 415.
 File: ./img/prepisima.png Graphic file (type png)
 <use ./img/prepisima.png>
-Package pdftex.def Info: ./img/prepisima.png  used on input line 396.
+Package pdftex.def Info: ./img/prepisima.png  used on input line 479.
 (pdftex.def)             Requested size: 56.6148pt x 13.30046pt.
- [6] (./rapport.aux) ) 
+ [6]
+<./img/jacobi/jac_ex_1.png, id=68, 364.36125pt x 173.64874pt>
+File: ./img/jacobi/jac_ex_1.png Graphic file (type png)
+<use ./img/jacobi/jac_ex_1.png>
+Package pdftex.def Info: ./img/jacobi/jac_ex_1.png  used on input line 483.
+(pdftex.def)             Requested size: 182.18018pt x 86.82416pt.
+<./img/gauss_seidel/g_e_ex_1.png, id=69, 365.365pt x 174.6525pt>
+File: ./img/gauss_seidel/g_e_ex_1.png Graphic file (type png)
+<use ./img/gauss_seidel/g_e_ex_1.png>
+Package pdftex.def Info: ./img/gauss_seidel/g_e_ex_1.png  used on input line 48
+7.
+(pdftex.def)             Requested size: 182.68205pt x 87.32603pt.
+<./img/jacobi/jac_ex_1_mod.png, id=70, 365.365pt x 174.6525pt>
+File: ./img/jacobi/jac_ex_1_mod.png Graphic file (type png)
+<use ./img/jacobi/jac_ex_1_mod.png>
+Package pdftex.def Info: ./img/jacobi/jac_ex_1_mod.png  used on input line 497.
+
+(pdftex.def)             Requested size: 182.68205pt x 87.32603pt.
+<./img/gauss_seidel/g_e_ex_1_mod.png, id=71, 364.36125pt x 173.64874pt>
+File: ./img/gauss_seidel/g_e_ex_1_mod.png Graphic file (type png)
+<use ./img/gauss_seidel/g_e_ex_1_mod.png>
+Package pdftex.def Info: ./img/gauss_seidel/g_e_ex_1_mod.png  used on input lin
+e 501.
+(pdftex.def)             Requested size: 182.18018pt x 86.82416pt.
+<./img/jacobi/jac_ex_3.png, id=72, 312.16624pt x 135.50626pt>
+File: ./img/jacobi/jac_ex_3.png Graphic file (type png)
+<use ./img/jacobi/jac_ex_3.png>
+Package pdftex.def Info: ./img/jacobi/jac_ex_3.png  used on input line 529.
+(pdftex.def)             Requested size: 156.08273pt x 67.75294pt.
+File: ./img/prepisima.png Graphic file (type png)
+<use ./img/prepisima.png>
+Package pdftex.def Info: ./img/prepisima.png  used on input line 531.
+(pdftex.def)             Requested size: 56.6148pt x 13.30046pt.
+ [7 <./img/jacobi/jac_ex_1.png> <./img/gauss_seidel/g_e_ex_1.png> <./img/jacobi
+/jac_ex_1_mod.png> <./img/gauss_seidel/g_e_ex_1_mod.png>]
+<./img/gauss_seidel/g_e_fail.png, id=76, 277.035pt x 137.51375pt>
+File: ./img/gauss_seidel/g_e_fail.png Graphic file (type png)
+<use ./img/gauss_seidel/g_e_fail.png>
+Package pdftex.def Info: ./img/gauss_seidel/g_e_fail.png  used on input line 53
+3.
+(pdftex.def)             Requested size: 138.51715pt x 68.7567pt.
+File: ./img/prepisima.png Graphic file (type png)
+<use ./img/prepisima.png>
+Package pdftex.def Info: ./img/prepisima.png  used on input line 535.
+(pdftex.def)             Requested size: 56.6148pt x 13.30046pt.
+
+[8 <./img/jacobi/jac_ex_3.png> <./img/gauss_seidel/g_e_fail.png>]
+(./rapport.aux) ) 
 Here is how much of TeX's memory you used:
- 7026 strings out of 483183
- 93976 string characters out of 5966292
- 728078 words of memory out of 5000000
- 21914 multiletter control sequences out of 15000+600000
- 548517 words of font info for 61 fonts, out of 8000000 for 9000
+ 7041 strings out of 483183
+ 94306 string characters out of 5966292
+ 731078 words of memory out of 5000000
+ 21924 multiletter control sequences out of 15000+600000
+ 551471 words of font info for 66 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  37i,17n,51p,327b,1857s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.e
-nc}{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc} </home/drfailer/
-.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt0800.600pk> </home/drfai
-ler/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0500.600pk> </home/d
-rfailer/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </ho
-me/drfailer/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> 
-</home/drfailer/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1200.600
-pk> </home/drfailer/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200
-.600pk> </home/drfailer/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx
-2074.600pk> </home/drfailer/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/
-eccc1728.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-ex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cme
-x7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf/fonts/
-type1/public/cm-super/sfbx1000.pfb></usr/share/texmf/fonts/type1/public/cm-supe
-r/sfcc1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr
-/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb>
-Output written on rapport.pdf (7 pages, 474922 bytes).
+ </home/drfailer/.texlive2019/texmf-var/fonts/pk/ljfour/jknapp
+en/ec/ectt0800.375pk> </home/drfailer/.texlive2019/texmf-var/fonts/pk/ljfour/jk
+nappen/ec/ecbx0700.600pk>{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts
+1.enc}{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc} </home/drfail
+er/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt0800.600pk> </home/dr
+failer/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0500.600pk> </hom
+e/drfailer/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> <
+/home/drfailer/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600p
+k> </home/drfailer/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1200.
+600pk> </home/drfailer/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1
+200.600pk> </home/drfailer/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/e
+cbx2074.600pk> </home/drfailer/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/
+ec/eccc1728.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/
+cmex7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cm
+ex8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cms
+y10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf/fon
+ts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf/fonts/type1/public/cm-s
+uper/sfcc1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></
+usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb>
+Output written on rapport.pdf (9 pages, 490278 bytes).
 PDF statistics:
- 346 PDF objects out of 1000 (max. 8388607)
- 124 compressed objects within 2 object streams
+ 372 PDF objects out of 1000 (max. 8388607)
+ 136 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  61 words of extra memory for PDF output out of 10000 (max. 10000000)
 

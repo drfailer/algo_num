@@ -1,11 +1,11 @@
+#include "matrix_tp2.h"
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "matrix_tp2.h"
 #define LEN 4
 #define SIGMA 0.0000001
 #define MAX 100
-#define EXAMPLE 0
+#define EXAMPLE 2
 
 int test(float *solus_k, float *solus_k1, int n) {
   int i;
