@@ -1,8 +1,9 @@
-#include <stdlib.h>
 #include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 // return nul matrix nxn
-void mat_0(float **tab, int n){
+void mat_0(float **tab, int n) {
   int i, j;
   for (i = 0; i < n; i++) {
     for (j = 0; j < n; j++) {
@@ -98,15 +99,32 @@ void lotkin(float **tab, int n) {
   }
 }
 
-void moler(float **tab, int n){
+void moler(float **tab, int n) {
   int i, j;
   for (i = 1; i <= n; i++) {
     for (j = 1; j <= n; j++) {
       if (i == j)
-	tab[i-1][j-1] = i;
+        tab[i - 1][j - 1] = i;
       else
-	tab[i-1][j-1] = (i < j)? (i-2):(j-2);
+        tab[i - 1][j - 1] = (i < j) ? (i - 2) : (j - 2);
     }
+  }
+}
+
+void chocho(float **tab, int n) {
+  if (n != 3) {
+    printf("error: segmentation fault");
+    exit(EXIT_FAILURE);
+  } else {
+    tab[0][0] = 64;
+    tab[0][1] = 40;
+    tab[0][2] = 24;
+    tab[1][0] = 40;
+    tab[1][1] = 29;
+    tab[1][2] = 17;
+    tab[2][0] = 24;
+    tab[2][1] = 17;
+    tab[2][2] = 19;
   }
 }
 
@@ -138,6 +156,9 @@ void mat(float **mat, int n, int type_mat) {
     break;
   case 9:
     moler(mat, n);
+    break;
+  case 10:
+    chocho(mat, n);
     break;
   default:
     break;

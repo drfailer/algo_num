@@ -2,8 +2,11 @@
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
-#define LEN 4
-#define EXAMPLE 9
+#include <
+#define LEN 3
+#define EXAMPLE 10
+
+int nbtours;
 
 void make_R(float **matrix, float **r, int n) {
   int i, j, k;   // loop var
@@ -13,6 +16,7 @@ void make_R(float **matrix, float **r, int n) {
     s = matrix[i][i];
     for (j = 0; j < i; j++) {
       s -= r[j][i] * r[j][i];
+      nbtours++;
     }
     if (s <= 0) {
       printf("La matrice n'est pas définie positive\n");
@@ -23,6 +27,7 @@ void make_R(float **matrix, float **r, int n) {
         sum = 0;
         for (k = 0; k < i; k++) {
           sum += r[k][i] * r[k][j];
+          nbtours++;
         }
         r[i][j] = (matrix[i][j] - sum) / r[i][i];
       }
@@ -39,6 +44,7 @@ void transpose(float **matrix, int n) {
       tmp = matrix[i][j];
       matrix[i][j] = matrix[j][i];
       matrix[j][i] = tmp;
+      nbtours++;
     }
   }
 }
@@ -58,6 +64,7 @@ void solver_cholesky(float **matrix, float *solus_x, float *b, int n) {
     tmp = b[i];
     for (j = 0; j < i; j++) {
       tmp -= solus_y[j] * r[i][j];
+      nbtours++;
     }
     solus_y[i] = tmp / r[i][i];
   }
@@ -66,6 +73,7 @@ void solver_cholesky(float **matrix, float *solus_x, float *b, int n) {
   for (i = (n - 1); i >= 0; i--) {
     for (j = (n - 1); j > i; j--) {
       solus_y[i] -= solus_x[j] * r[i][j];
+      nbtours++;
     }
     solus_x[i] = solus_y[i] / r[i][i];
   }
@@ -89,6 +97,7 @@ void show(float **matrix, int n){
 }
 
 int main() {
+  nbtours = 0;
   int i;
   float *solus = malloc(LEN * sizeof(float));
   if (solus == NULL)
@@ -107,6 +116,7 @@ int main() {
   for (i = 0; i < LEN; i++) {
     printf("%f\n", solus[i]);
   }
+  printf("nb itération: %d\n", nbtours);
   /*FREE*/
   free(solus);
   free(b);

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.7.26)  20 OCT 2020 17:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.7.26)  21 OCT 2020 15:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -549,85 +549,85 @@ Package pdftex.def Info: ./img/cholesky/bord.png  used on input line 301.
 <./img/cholesky/ding_dong.png, id=51, 387.4475pt x 96.36pt>
 File: ./img/cholesky/ding_dong.png Graphic file (type png)
 <use ./img/cholesky/ding_dong.png>
-Package pdftex.def Info: ./img/cholesky/ding_dong.png  used on input line 308.
+Package pdftex.def Info: ./img/cholesky/ding_dong.png  used on input line 305.
 (pdftex.def)             Requested size: 193.72327pt x 48.17987pt.
-<./img/cholesky/franc.png, id=52, 361.35pt x 153.57375pt>
-File: ./img/cholesky/franc.png Graphic file (type png)
-<use ./img/cholesky/franc.png>
-Package pdftex.def Info: ./img/cholesky/franc.png  used on input line 312.
-(pdftex.def)             Requested size: 180.67456pt x 76.78668pt.
+<./img/cholesky/chocho_test_final.png, id=52, 299.1175pt x 134.5025pt>
+File: ./img/cholesky/chocho_test_final.png Graphic file (type png)
+<use ./img/cholesky/chocho_test_final.png>
+Package pdftex.def Info: ./img/cholesky/chocho_test_final.png  used on input li
+ne 309.
+(pdftex.def)             Requested size: 149.55838pt x 67.25107pt.
 File: ./img/prepisima.png Graphic file (type png)
 <use ./img/prepisima.png>
-Package pdftex.def Info: ./img/prepisima.png  used on input line 326.
+Package pdftex.def Info: ./img/prepisima.png  used on input line 324.
 (pdftex.def)             Requested size: 56.6148pt x 13.30046pt.
-[4 <./img/cholesky/bord.png> <./img/cholesky/ding_dong.png> <./img/cholesky/fra
-nc.png>]
+[4 <./img/cholesky/bord.png> <./img/cholesky/ding_dong.png> <./img/cholesky/cho
+cho_test_final.png>]
 File: ./img/prepisima.png Graphic file (type png)
 <use ./img/prepisima.png>
-Package pdftex.def Info: ./img/prepisima.png  used on input line 401.
+Package pdftex.def Info: ./img/prepisima.png  used on input line 396.
 (pdftex.def)             Requested size: 56.6148pt x 13.30046pt.
  [5]
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <8> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 415.
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 419.
 File: ./img/prepisima.png Graphic file (type png)
 <use ./img/prepisima.png>
-Package pdftex.def Info: ./img/prepisima.png  used on input line 479.
+Package pdftex.def Info: ./img/prepisima.png  used on input line 468.
 (pdftex.def)             Requested size: 56.6148pt x 13.30046pt.
  [6]
 <./img/jacobi/jac_ex_1.png, id=68, 364.36125pt x 173.64874pt>
 File: ./img/jacobi/jac_ex_1.png Graphic file (type png)
 <use ./img/jacobi/jac_ex_1.png>
-Package pdftex.def Info: ./img/jacobi/jac_ex_1.png  used on input line 483.
+Package pdftex.def Info: ./img/jacobi/jac_ex_1.png  used on input line 487.
 (pdftex.def)             Requested size: 182.18018pt x 86.82416pt.
 <./img/gauss_seidel/g_e_ex_1.png, id=69, 365.365pt x 174.6525pt>
 File: ./img/gauss_seidel/g_e_ex_1.png Graphic file (type png)
 <use ./img/gauss_seidel/g_e_ex_1.png>
-Package pdftex.def Info: ./img/gauss_seidel/g_e_ex_1.png  used on input line 48
-7.
+Package pdftex.def Info: ./img/gauss_seidel/g_e_ex_1.png  used on input line 49
+1.
 (pdftex.def)             Requested size: 182.68205pt x 87.32603pt.
 <./img/jacobi/jac_ex_1_mod.png, id=70, 365.365pt x 174.6525pt>
 File: ./img/jacobi/jac_ex_1_mod.png Graphic file (type png)
 <use ./img/jacobi/jac_ex_1_mod.png>
-Package pdftex.def Info: ./img/jacobi/jac_ex_1_mod.png  used on input line 497.
+Package pdftex.def Info: ./img/jacobi/jac_ex_1_mod.png  used on input line 501.
 
 (pdftex.def)             Requested size: 182.68205pt x 87.32603pt.
 <./img/gauss_seidel/g_e_ex_1_mod.png, id=71, 364.36125pt x 173.64874pt>
 File: ./img/gauss_seidel/g_e_ex_1_mod.png Graphic file (type png)
 <use ./img/gauss_seidel/g_e_ex_1_mod.png>
 Package pdftex.def Info: ./img/gauss_seidel/g_e_ex_1_mod.png  used on input lin
-e 501.
+e 505.
 (pdftex.def)             Requested size: 182.18018pt x 86.82416pt.
-<./img/jacobi/jac_ex_3.png, id=72, 312.16624pt x 135.50626pt>
-File: ./img/jacobi/jac_ex_3.png Graphic file (type png)
-<use ./img/jacobi/jac_ex_3.png>
-Package pdftex.def Info: ./img/jacobi/jac_ex_3.png  used on input line 529.
-(pdftex.def)             Requested size: 156.08273pt x 67.75294pt.
 File: ./img/prepisima.png Graphic file (type png)
 <use ./img/prepisima.png>
-Package pdftex.def Info: ./img/prepisima.png  used on input line 531.
+Package pdftex.def Info: ./img/prepisima.png  used on input line 529.
 (pdftex.def)             Requested size: 56.6148pt x 13.30046pt.
  [7 <./img/jacobi/jac_ex_1.png> <./img/gauss_seidel/g_e_ex_1.png> <./img/jacobi
 /jac_ex_1_mod.png> <./img/gauss_seidel/g_e_ex_1_mod.png>]
+<./img/jacobi/jac_ex_3.png, id=75, 312.16624pt x 135.50626pt>
+File: ./img/jacobi/jac_ex_3.png Graphic file (type png)
+<use ./img/jacobi/jac_ex_3.png>
+Package pdftex.def Info: ./img/jacobi/jac_ex_3.png  used on input line 533.
+(pdftex.def)             Requested size: 156.08273pt x 67.75294pt.
 <./img/gauss_seidel/g_e_fail.png, id=76, 277.035pt x 137.51375pt>
 File: ./img/gauss_seidel/g_e_fail.png Graphic file (type png)
 <use ./img/gauss_seidel/g_e_fail.png>
 Package pdftex.def Info: ./img/gauss_seidel/g_e_fail.png  used on input line 53
-3.
+7.
 (pdftex.def)             Requested size: 138.51715pt x 68.7567pt.
 File: ./img/prepisima.png Graphic file (type png)
 <use ./img/prepisima.png>
-Package pdftex.def Info: ./img/prepisima.png  used on input line 535.
+Package pdftex.def Info: ./img/prepisima.png  used on input line 539.
 (pdftex.def)             Requested size: 56.6148pt x 13.30046pt.
-
-[8 <./img/jacobi/jac_ex_3.png> <./img/gauss_seidel/g_e_fail.png>]
+ [8 <./img/jacobi/jac_ex_3.png> <./img/gauss_seidel/g_e_fail.png>]
 File: ./img/prepisima.png Graphic file (type png)
 <use ./img/prepisima.png>
-Package pdftex.def Info: ./img/prepisima.png  used on input line 548.
+Package pdftex.def Info: ./img/prepisima.png  used on input line 552.
 (pdftex.def)             Requested size: 56.6148pt x 13.30046pt.
- [9
 
-]
-(./prog/cholesky.c
+[9
+
+] (./prog/cholesky.c
 
 ! Package inputenc Error: Invalid UTF-8 byte sequence.
 
@@ -667,7 +667,7 @@ Package pdftex.def Info: ./img/prepisima.png  used on input line 72.
 ])
 File: ./img/prepisima.png Graphic file (type png)
 <use ./img/prepisima.png>
-Package pdftex.def Info: ./img/prepisima.png  used on input line 556.
+Package pdftex.def Info: ./img/prepisima.png  used on input line 560.
 (pdftex.def)             Requested size: 56.6148pt x 13.30046pt.
  [11] (./prog/jacobi.c
 File: ./img/prepisima.png Graphic file (type png)
@@ -679,7 +679,7 @@ Package pdftex.def Info: ./img/prepisima.png  used on input line 72.
 ])
 File: ./img/prepisima.png Graphic file (type png)
 <use ./img/prepisima.png>
-Package pdftex.def Info: ./img/prepisima.png  used on input line 564.
+Package pdftex.def Info: ./img/prepisima.png  used on input line 568.
 (pdftex.def)             Requested size: 56.6148pt x 13.30046pt.
  [13] (./prog/gauss_seidel.c
 File: ./img/prepisima.png Graphic file (type png)
@@ -691,13 +691,13 @@ Package pdftex.def Info: ./img/prepisima.png  used on input line 72.
 ])
 File: ./img/prepisima.png Graphic file (type png)
 <use ./img/prepisima.png>
-Package pdftex.def Info: ./img/prepisima.png  used on input line 573.
+Package pdftex.def Info: ./img/prepisima.png  used on input line 577.
 (pdftex.def)             Requested size: 56.6148pt x 13.30046pt.
  [15]
 (./rapport.aux) ) 
 Here is how much of TeX's memory you used:
  7075 strings out of 483183
- 94707 string characters out of 5966292
+ 94779 string characters out of 5966292
  787078 words of memory out of 5000000
  21947 multiletter control sequences out of 15000+600000
  551471 words of font info for 66 fonts, out of 8000000 for 9000
@@ -736,7 +736,7 @@ texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf/fon
 ts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf/fonts/type1/public/cm-s
 uper/sfcc1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></
 usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb>
-Output written on rapport.pdf (16 pages, 511915 bytes).
+Output written on rapport.pdf (16 pages, 517842 bytes).
 PDF statistics:
  407 PDF objects out of 1000 (max. 8388607)
  151 compressed objects within 2 object streams

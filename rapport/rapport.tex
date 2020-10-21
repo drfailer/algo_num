@@ -299,18 +299,22 @@ travail avec des matrices de grandes taille.
 \begin{itemize}
 \item Bord \\
   \includegraphics[scale=0.5]{./img/cholesky/bord.png} \\
-  Cette solution est très imprécise avec cette méthode ce qui est du au fait que
-  le programme crée la matrice $R$ et résous les deux sous-systèmes avec une
-  matrice qui est déjà triangulaire supérieure ce qui génère une suite
-  d'imprécisions dans les calcule. la vrai solution est:
+  La méthode ne converge pas car la matrice n'est pas à diagonale dominante.
   $x_{1} = \frac{1}{8} = 0.125 , x_{2} = 1 , x_{3} = 1 , x_{4} = 1$
 \item Ding Dong \\
   \includegraphics[scale=0.5]{./img/cholesky/ding_dong.png} \\
   Les programme retourne une erreur, en effet, la matrice n'est pas définie
   positive donc la méthode ne converge pas.
-\item Franc \\
-  \includegraphics[scale=0.5]{./img/cholesky/franc.png} \\
-  Le programme trouve la bonne solution.
+\item Matrice à diagonale dominante \\
+  \includegraphics[scale=0.5]{./img/cholesky/chocho_test_final.png} \\
+  Cette matrice est a diagonale dominante donc la méthode converge. La solution
+  en valeur exacte est : $x_{1} = \frac{-53}{1152} \approx -0.4600694444$,
+  $x-{2} = \frac{5}{72} \approx 0.06944444444$ et $x_{3} = \frac{7}{144} =
+  0.048611111111$ ce qui est très poche de ce que trouve le programme soit une
+  précision de $0.18\%$ calculée avec la formule suivante: $\frac{\parallel
+    x_{c} \parallel - \parallel x_{p} \parallel}{\parallel x_{c} \parallel}$.
+  Ici, on affiche aussi le nombre d'itérations effectué par le programme (pour
+  une matrice $3 \times 3$ sans compter l'affichage de la matrice).
 \end{itemize}
 
 \subsection{Conclusion sur les méthodes de résolution directes}
