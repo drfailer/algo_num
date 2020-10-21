@@ -20,4 +20,4 @@
 \contentsline {subsubsection}{\numberline {2.2.3}Le programme en C}{6}%
 \contentsline {subsection}{\numberline {2.3}Comparaison des résultats}{7}%
 \contentsline {subsubsection}{\numberline {2.3.1}Matrice symétrique à diagonale dominante}{7}%
-\contentsline {subsubsection}{\numberline {2.3.2}Une Erreur}{7}%
+\contentsline {subsubsection}{\numberline {2.3.2}Une Erreur}{8}%

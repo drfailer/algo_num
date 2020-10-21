@@ -2,7 +2,7 @@
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <
+#include <time.h>
 #define LEN 3
 #define EXAMPLE 10
 
@@ -98,6 +98,9 @@ void show(float **matrix, int n){
 
 int main() {
   nbtours = 0;
+  // Time
+  float temps;
+  clock_t t1, t2;
   int i;
   float *solus = malloc(LEN * sizeof(float));
   if (solus == NULL)
@@ -111,12 +114,16 @@ int main() {
   float **matrix = create_mat(LEN);
   mat(matrix, LEN, EXAMPLE);
   show(matrix, LEN);
+  t1 = clock();
   solver_cholesky(matrix, solus, b, LEN);
+  t2 = clock();
   // Print solutions
   for (i = 0; i < LEN; i++) {
     printf("%f\n", solus[i]);
   }
   printf("nb itération: %d\n", nbtours);
+  temps = (float)(t2 - t1) / CLOCKS_PER_SEC;
+  printf("temps = %f\n", temps);
   /*FREE*/
   free(solus);
   free(b);

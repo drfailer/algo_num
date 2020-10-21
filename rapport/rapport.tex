@@ -121,6 +121,9 @@
 
 \subsection{Gauss}
 
+%=================================================
+%                   CORENTIN
+%=================================================
 \subsection{Cholesky}
 
 \subsubsection{Principe}
@@ -308,13 +311,20 @@ travail avec des matrices de grandes taille.
 \item Matrice à diagonale dominante \\
   \includegraphics[scale=0.5]{./img/cholesky/chocho_test_final.png} \\
   Cette matrice est a diagonale dominante donc la méthode converge. La solution
-  en valeur exacte est : $x_{1} = \frac{-53}{1152} \approx -0.4600694444$,
-  $x-{2} = \frac{5}{72} \approx 0.06944444444$ et $x_{3} = \frac{7}{144} =
-  0.048611111111$ ce qui est très poche de ce que trouve le programme soit une
-  précision de $0.18\%$ calculée avec la formule suivante: $\frac{\parallel
-    x_{c} \parallel - \parallel x_{p} \parallel}{\parallel x_{c} \parallel}$.
+  en valeur exacte est :
+  \quad$x_{1} = \frac{-53}{1152} \approx -0.4600694444$,
+  \quad$x-{2} = \frac{5}{72} \approx 0.06944444444$
+  \quad$x_{3} = \frac{7}{144} = 0.048611111111$
+  
+  Ce qui est très poche de ce que trouve le programme soit une
+  précision de $0.18\%$ calculée avec la formule suivante:
+  \[\frac{\parallel x_{c} \parallel - \parallel x_{p} \parallel}{\parallel x_{c}
+    \parallel}\]
+  
   Ici, on affiche aussi le nombre d'itérations effectué par le programme (pour
   une matrice $3 \times 3$ sans compter l'affichage de la matrice).
+
+  Enfin on affiche le temps d’exécution en seconde.
 \end{itemize}
 
 \subsection{Conclusion sur les méthodes de résolution directes}
@@ -492,7 +502,9 @@ Voici la solution trouvée par \textbf{gauss seidel}:
 
 On constate que la solution trouvée avec les deux méthodes et la même et si on
 regarde le nombre de tours effectués, on voit que \textbf{gauss-seidel} converge
-presque deux fois plus vite que \textbf{jacobi}.
+presque deux fois plus vite que \textbf{jacobi}. Cependant, on constate tout de
+même que le temps d’exécution du programme est presque le même. La solution
+n'est pas arrondie, elle est exacte.
 
 Résolvons le même système en faisant varier les valeurs dans b de $+0.005$:
 
@@ -504,8 +516,10 @@ Voici la solution trouvée par \textbf{gauss seidel}:
 
 \includegraphics[scale=0.5]{./img/gauss_seidel/g_e_ex_1_mod.png}
 
-On constate que les résultats n'ont pas beaucoup variés, donc la modification
-effectuée sur b sont bien gérées par le programme donc les méthodes sont stables.
+On constate que les résultats ainsi que les temps d’exécution (légère variation
+pour gauss seidel) et le nombre d'itérations n'ont pas beaucoup variés, donc la
+modification effectuée sur b sont bien gérées par le programme donc les méthodes
+sont stables.
 
 \subsubsection{Une Erreur}
 
@@ -530,7 +544,7 @@ Résolution de:
 
 Voici la solution trouvée par \textbf{jacobi}:
 
-\includegraphics[scale=0.5]{./img/jacobi/jac_ex_3.png}
+\includegraphics[scale=0.5]{./img/jacobi/jac_fail.png}
 
 Voici la solution trouvée par \textbf{gauss seidel}:
 
@@ -544,10 +558,7 @@ Voici la solution trouvée par \textbf{gauss seidel}:
 
 \begin{appendix}
   \section*{Gauss}
-
-  \begin{lstlisting}
-
-  \end{lstlisting}
+  \lstinputlisting{./prog/gauss.c}
 \end{appendix}
 \clearpage
 

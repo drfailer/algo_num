@@ -2,10 +2,11 @@
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
-#define LEN 4
+#include <time.h>
+#define LEN 3
 #define SIGMA 0.0000001
 #define MAX 100
-#define EXAMPLE 2
+#define EXAMPLE 3
 
 int test(float *solus_k, float *solus_k1, int n) {
   int i;
@@ -59,6 +60,8 @@ void show(float **mat, int n){
 }
 
 int main() {
+  float temps;
+  clock_t t1, t2;
   int i;
   // init b
   float *b = malloc(LEN * sizeof(float));
@@ -76,10 +79,14 @@ int main() {
   init_mat(matrix, b, LEN, EXAMPLE);
   printf("\n");
   show(matrix, LEN);
+  t1 = clock();
   gauss_seidel(matrix, b, solus, LEN);
+  t2 = clock();
   for (i = 0; i < LEN; i++) {
     printf("%f\n", solus[i]);
   }
+  temps = (float)(t2 - t1) / CLOCKS_PER_SEC;
+  printf("temps = %f\n", temps);
   // FREE
   free(solus);
   free(b);
