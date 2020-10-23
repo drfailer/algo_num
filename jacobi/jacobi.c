@@ -6,7 +6,7 @@
 #define LEN 3
 #define SIGMA 0.0000001
 #define MAX 100
-#define EXAMPLE 3
+#define EXAMPLE 4
 
 int test(float *solus_k, float *solus_k1, int n) {
   int i;
@@ -37,8 +37,7 @@ void jacobi(float **matrix, float *b, float *solus_k, int n) {
     }
     bool = test(solus_k1, solus_k, n);
     for (i = 0; i < n; i++) {
-      solus_k[i] = solus_k1[i]; // At the end of the execution, solus_k contain
-                                // the solutions
+      solus_k[i] = solus_k1[i];
     }
     compt++;
   }
@@ -71,10 +70,10 @@ int main() {
   if (solus == NULL)
     exit(EXIT_FAILURE);
   for (i = 0; i < LEN; i++)
-    solus[i] = 1;
+    solus[i] = 0;
   // init matrix
   float **matrix = create_mat(LEN);
-  // Initialize matrix and b with a pre-written axample
+  // Initialise matrix et b en fonction de l'exemple choisit
   init_mat(matrix, b, LEN, EXAMPLE);
   printf("\n");
   show(matrix, LEN);

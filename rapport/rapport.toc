@@ -1,23 +1,29 @@
 \babel@toc {nil}{}
 \contentsline {section}{\numberline {1}Algorithmiques directes}{2}%
 \contentsline {subsection}{\numberline {1.1}Gauss}{2}%
-\contentsline {subsection}{\numberline {1.2}Cholesky}{2}%
-\contentsline {subsubsection}{\numberline {1.2.1}Principe}{2}%
-\contentsline {subsubsection}{\numberline {1.2.2}L'Algorithme}{2}%
-\contentsline {subsubsection}{\numberline {1.2.3}Les Variables}{2}%
-\contentsline {subsubsection}{\numberline {1.2.4}Calcule de la matrice R}{2}%
-\contentsline {subsubsection}{\numberline {1.2.5}Résolution des sous-systèmes}{3}%
-\contentsline {subsubsection}{\numberline {1.2.6}Les Tests}{4}%
-\contentsline {subsection}{\numberline {1.3}Conclusion sur les méthodes de résolution directes}{5}%
-\contentsline {section}{\numberline {2}algorithmes itératifs}{5}%
-\contentsline {subsection}{\numberline {2.1}Jacobi}{5}%
-\contentsline {subsubsection}{\numberline {2.1.1}Principe}{5}%
-\contentsline {subsubsection}{\numberline {2.1.2}L'algorithme}{5}%
-\contentsline {subsubsection}{\numberline {2.1.3}Implémentation en C}{5}%
-\contentsline {subsection}{\numberline {2.2}Gauss-seidel}{6}%
-\contentsline {subsubsection}{\numberline {2.2.1}Le principe}{6}%
-\contentsline {subsubsection}{\numberline {2.2.2}L'algorithme}{6}%
-\contentsline {subsubsection}{\numberline {2.2.3}Le programme en C}{6}%
-\contentsline {subsection}{\numberline {2.3}Comparaison des résultats}{7}%
-\contentsline {subsubsection}{\numberline {2.3.1}Matrice symétrique à diagonale dominante}{7}%
-\contentsline {subsubsection}{\numberline {2.3.2}Une Erreur}{8}%
+\contentsline {subsubsection}{\numberline {1.1.1}Principe}{2}%
+\contentsline {subsubsection}{\numberline {1.1.2}L'Algorithme du pivot de Gauss}{2}%
+\contentsline {subsubsection}{\numberline {1.1.3}Les fonctions}{2}%
+\contentsline {subsubsection}{\numberline {1.1.4}Les tests}{4}%
+\contentsline {subsection}{\numberline {1.2}Cholesky}{6}%
+\contentsline {subsubsection}{\numberline {1.2.1}Principe}{6}%
+\contentsline {subsubsection}{\numberline {1.2.2}L'Algorithme}{6}%
+\contentsline {subsubsection}{\numberline {1.2.3}Les Variables}{6}%
+\contentsline {subsubsection}{\numberline {1.2.4}Calcule de la matrice R}{7}%
+\contentsline {subsubsection}{\numberline {1.2.5}Résolution des sous-systèmes}{7}%
+\contentsline {subsubsection}{\numberline {1.2.6}Les Tests}{8}%
+\contentsline {subsection}{\numberline {1.3}Conclusion sur les méthodes de résolution directes}{9}%
+\contentsline {section}{\numberline {2}algorithmes itératifs}{9}%
+\contentsline {subsection}{\numberline {2.1}Jacobi}{10}%
+\contentsline {subsubsection}{\numberline {2.1.1}Principe}{10}%
+\contentsline {subsubsection}{\numberline {2.1.2}L'algorithme}{10}%
+\contentsline {subsubsection}{\numberline {2.1.3}Implémentation en C}{10}%
+\contentsline {subsection}{\numberline {2.2}Gauss-seidel}{11}%
+\contentsline {subsubsection}{\numberline {2.2.1}Le principe}{11}%
+\contentsline {subsubsection}{\numberline {2.2.2}L'algorithme}{11}%
+\contentsline {subsubsection}{\numberline {2.2.3}Le programme en C}{11}%
+\contentsline {subsection}{\numberline {2.3}Comparaison des résultats}{12}%
+\contentsline {subsubsection}{\numberline {2.3.1}Matrice symétrique à diagonale dominante}{12}%
+\contentsline {subsubsection}{\numberline {2.3.2}Autre système}{13}%
+\contentsline {subsubsection}{\numberline {2.3.3}Une Erreur}{13}%
+\contentsline {subsection}{\numberline {2.4}Conclusion sur les méthodes itératives}{14}%

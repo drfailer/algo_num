@@ -6,7 +6,7 @@
 #define LEN 3
 #define SIGMA 0.0000001
 #define MAX 100
-#define EXAMPLE 3
+#define EXAMPLE 4
 
 int test(float *solus_k, float *solus_k1, int n) {
   int i;
@@ -72,7 +72,7 @@ int main() {
   if (solus == NULL)
     exit(EXIT_FAILURE);
   for (i = 0; i < LEN; i++)
-    solus[i] = 1;
+    solus[i] = 0;
   // alloc matrix
   float **matrix = create_mat(LEN);
   // Initialise matrix en fonction de l'exemple choisit

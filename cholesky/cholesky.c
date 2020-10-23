@@ -3,14 +3,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#define LEN 3
-#define EXAMPLE 10
+#define LEN 4
+#define EXAMPLE 1
 
 int nbtours;
 
 void make_R(float **matrix, float **r, int n) {
-  int i, j, k;   // loop var
-  float sum = 0; // Used to calculate the sum of r_ki*r_kj
+  int i, j, k;   // variables de boucles
+  float sum = 0; // Utilise pour calculer la somme des r_ki*r_kj
   float s;
   for (i = 0; i < n; i++) {
     s = matrix[i][i];
@@ -35,7 +35,7 @@ void make_R(float **matrix, float **r, int n) {
   }
 }
 
-// transpose matrix
+// transpose la matrice en entree
 void transpose(float **matrix, int n) {
   int i, j;
   float tmp;
@@ -53,11 +53,10 @@ void solver_cholesky(float **matrix, float *solus_x, float *b, int n) {
   int i, j;
   float tmp;
   float *solus_y = malloc(n * sizeof(float));
-  /*Creation of the matrix  R:*/
+  /*Creation de la matrice R:*/
   float **r = create_mat(n);
   mat_0(r, n);
   make_R(matrix, r, n);
-  /*************************************************************************/
   /*Resolution de R^T * y = b*/
   transpose(r, n);
   for (i = 0; i < n; i++) {
@@ -68,7 +67,7 @@ void solver_cholesky(float **matrix, float *solus_x, float *b, int n) {
     }
     solus_y[i] = tmp / r[i][i];
   }
-  /*Solving R * x = y*/
+  /*Resolution de R * x = y*/
   transpose(r, n);
   for (i = (n - 1); i >= 0; i--) {
     for (j = (n - 1); j > i; j--) {
@@ -117,7 +116,7 @@ int main() {
   t1 = clock();
   solver_cholesky(matrix, solus, b, LEN);
   t2 = clock();
-  // Print solutions
+  // Affiche les solutions
   for (i = 0; i < LEN; i++) {
     printf("%f\n", solus[i]);
   }

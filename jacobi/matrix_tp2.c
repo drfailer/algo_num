@@ -91,6 +91,26 @@ void ex_3(float **mat, float *b, int n) {
   }
 }
 
+void ex_4(float **mat, float *b, int n){
+  if (n != 3) {
+    printf("error: segmentation fault");
+    exit(EXIT_FAILURE);
+  } else {
+    b[0] = 8.005;
+    b[1] = 3.005;
+    b[2] = 8.005;
+    mat[0][0] = 4;
+    mat[0][1] = 1;
+    mat[0][2] = -2;
+    mat[1][0] = -1;
+    mat[1][1] = 3;
+    mat[1][2] = 0;
+    mat[2][0] = -2;
+    mat[2][1] = -5;
+    mat[2][2] = 8;
+  }
+}
+
 void init_mat(float **mat, float *b, int n, int example) {
   switch (example) {
   case 1:
@@ -101,6 +121,9 @@ void init_mat(float **mat, float *b, int n, int example) {
     break;
   case 3:
     ex_3(mat, b, n);
+    break;
+  case 4:
+    ex_4(mat, b, n);
   default:
     break;
   }

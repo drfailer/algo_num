@@ -2,10 +2,11 @@
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
-#define LEN 4
+#include <time.h>
+#define LEN 3
 #define SIGMA 0.0000001
 #define MAX 100
-#define EXAMPLE 2
+#define EXAMPLE 4
 
 int test(float *solus_k, float *solus_k1, int n) {
   int i;
@@ -36,8 +37,7 @@ void jacobi(float **matrix, float *b, float *solus_k, int n) {
     }
     bool = test(solus_k1, solus_k, n);
     for (i = 0; i < n; i++) {
-      solus_k[i] = solus_k1[i]; // At the end of the execution, solus_k contain
-                                // the solutions
+      solus_k[i] = solus_k1[i];
     }
     compt++;
   }
@@ -58,6 +58,8 @@ void show(float **mat, int n){
 }
 
 int main() {
+  float temps;
+  clock_t t1, t2;
   int i;
   // init b
   float *b = malloc(LEN * sizeof(float));
@@ -68,17 +70,21 @@ int main() {
   if (solus == NULL)
     exit(EXIT_FAILURE);
   for (i = 0; i < LEN; i++)
-    solus[i] = 1;
+    solus[i] = 0;
   // init matrix
   float **matrix = create_mat(LEN);
-  // Initialize matrix and b with a pre-written axample
+  // Initialise matrix et b en fonction de l'exemple choisit
   init_mat(matrix, b, LEN, EXAMPLE);
   printf("\n");
   show(matrix, LEN);
+  t1 = clock();
   jacobi(matrix, b, solus, LEN);
+  t2 = clock();
   for (i = 0; i < LEN; i++) {
     printf("%f\n", solus[i]);
   }
+  temps = (float)(t2 - t1) / CLOCKS_PER_SEC;
+  printf("temps = %f\n", temps);
   // FREE
   free(solus);
   free(b);

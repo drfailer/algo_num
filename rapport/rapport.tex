@@ -121,9 +121,233 @@
 
 \subsection{Gauss}
 
-%=================================================
-%                   CORENTIN
-%=================================================
+\subsubsection{Principe}
+
+Le principe de cette méthode est de manipuler une matrice \textbf{A} de coefficients du système linéaire, de sorte à ce qu'elle devienne triangulaire supérieure. Les coefficients $a_{ii} = 1$ tels que $i \in [0,n[$ . Ensuite par substitution des inconnues, on obtient la matrice solution facilement grâce au système échelonné.
+
+\[
+A \cdot X = B \text{  où  } A = \begin{pmatrix} 
+a_{11} & .  & . & . & a_{1n}\\ 
+.      & .  & . & . & . \\ 
+.      & .  & . & . & . \\ 
+.      & .  & . & . & . \\
+a_{n1} & .  & . & . & a_{nn} \\  
+\end{pmatrix}
+\longrightarrow
+\begin{pmatrix} 
+1      & a_{12}  & . & . & a_{1n}\\ 
+0      & 1  	 & . & . & . \\ 
+.      & .  	 & 1 & . & . \\ 
+.      & .   	 & . & 1 & a_{n-1n} \\
+0      & .  	 & . & 0 & 1 \\  
+\end{pmatrix}
+\]
+
+\subsubsection{L'Algorithme du pivot de Gauss}
+
+\begin{lstlisting}
+$k := 0$;
+Pour $j$ allant de $1$ a $p$ :
+	Si il existe $i \in [k+1,n]$ tel que $a_{ij} \neq 0$ alors : 
+			
+			$k:= k + 1$;
+			$q:=$ choix$(i \in [k,n])$ tel que $a_{ij} \neq 0)$;
+			$L_q \leftarrow \frac{1}{a_{qj}}L_q$;
+			
+			Si $k \neq q$ alors :
+				$L_k \leftrightarrow L_q$;
+			
+			Pour $i$ allant de $k + 1$ a $n$;
+				$L_i \leftarrow L_i - a_{ij}L_k$;
+						
+\end{lstlisting}
+
+Dans l'ordre l'algorithme fait :
+
+\begin{itemize}
+	\item Ligne 1 : indice de ligne du pivot;
+	\item Ligne 2 : indice de colonne;
+	\item Ligne 3 : test existence du prochain pivot;
+	\item Ligne 5 : mise à jour de l'indice de ligne du pivot;
+	\item Ligne 6 : choix du nouveau pivot;
+	\item Ligne 7 : normalisation;
+	\item Ligne 10: mise du pivot à la bonne place;
+	\item Ligne 12: élimination des des valeurs sous le pivot;						
+\end{itemize} 
+
+\subsubsection{Les fonctions}
+
+Pour simplifier la lisibilité du programme certaines opérations sont gérées par des fonctions annexes telles que :
+\newline
+\begin{itemize}
+	\item La normalisation (fonction "\textit{normaLigne}")
+	\item L'échange de deux lignes (fonction "\textit{echangeLigne}")
+	\item La soustraction entre deux lignes (fonction "\textit{soustractionsLignes}")
+	\item La résolution du système, une fois la matrice échelonnée (fonction "\textit{resolution}")
+\end{itemize}
+\clearpage
+\begin{lstlisting}
+	void normaLigne(float ** A, float * B, int n, int q, int j)
+	{
+		int ji;
+		float tmp = A[q][j];
+		
+		"Division de chaque elements de la ligne q de matrice A et B:"
+		for(ji = q;ji < n;ji++)
+		{
+			iteration++;
+			A[q][ji] = A[q][ji] / tmp;
+		}
+		B[q] = B[q]/tmp;: 
+	}
+\end{lstlisting}
+
+NormaLigne : Normalise une ligne de la matrice, ici la ligne du pivot \textbf{q}.
+
+\begin{lstlisting}
+	void echangeLigne(float ** A, float * B, int n, int q, int k)
+	{
+		float tmp;
+		int j;
+		for (j = 0; j<n ;j++)
+		{
+			iteration++;
+			tmp     = A[k][j];
+			A[k][j] = A[q][j];
+			A[q][j] = tmp;
+		} 
+		
+		tmp  = B[k] ;
+		B[k] = B[q];
+		B[q] = tmp;
+	}
+\end{lstlisting}
+
+EchangeLigne : Echange les valeurs de la ligne \textbf{q} et \textbf{k}.
+
+\begin{lstlisting}
+	void soustractionLignes(float ** A, float * B, int n, int i, int j, int k)
+	{
+		int ji;
+		float tmp = A[i][j];
+		
+		for(ji = 0; ji < n; ji++)
+		{
+			iteration++;
+			A[i][ji] = A[i][ji] - tmp*A[k][ji];
+		}
+		B[i] -= tmp * B[k];
+	}
+\end{lstlisting}
+
+SoustractionLignes : Soustrait les valeurs de la ligne \textbf{k} aux valeurs de la ligne \textit{i} de sorte à ce que la valeur sous le pivot (à la colonne \textbf{j}) devienne nulle.
+\newline
+\textit{Note : ne pas prendre en compte la variable} \textbf{iteration} \textit{, elle sert à retourner la complexité pratique du programme.}
+\clearpage
+\begin{lstlisting}
+	float * resolution(float ** A, float * B, int n)
+	{
+		float * X = (float *)malloc(n*sizeof(float)); 			
+		float somme;
+		
+		for (int i = n-1; i>=0; i--)			"indice de la ligne"
+		{
+			iteration++;
+			somme = 0;
+			for (int j = n-1; j>i; j--)			"indice de la colonne"
+			{
+				somme += A[i][j]*X[j];
+			}
+			X[i] = (B[i]-somme);
+		}
+		return X;
+	}
+\end{lstlisting}
+
+Resolution : Renvoie la matrice solution du système linéaire. Elle parcours la matrice \textbf{A} de puis le bas de la diagonale (en $a_{nn}$). puis remonte jusqu'à l'autre extrémité.
+A ce stade, pour chaque ligne \textbf{i} on a l'inconnue $x_i$ telle que :
+\[x_i = b_i - \sum_{k = i+1}^{n}a_{ik}x_k\]
+
+
+\subsubsection{Les tests}
+
+Tout les systèmes seront tels que :\\
+\[
+A \cdot X = 
+\begin{pmatrix} 
+1  \\ 
+1  \\ 
+1  \\ 
+1  \\
+\end{pmatrix}
+\]
+\\
+\textbf{\underline{\large{Ding Dong :}}}
+\\
+\\
+\begin{center}
+	\includegraphics[scale=0.5]{./img/gauss/TestDingDong.png} \\
+\end{center}
+
+Ici on a Ding Dong carré de dimension 4, et le système échelonné ci-dessous.
+Le programme trouve la matrice solution attendue.
+On remarque que la méthode a une complexité pratique de 34 opérations sur ce système, et qu'il le résout en 0.178 seconde environ.
+\\
+La fonction d'erreur est nulle (on trouve les valeurs exactes).
+Résolvons le même système en faisant varier les valeurs dans b de +0.005, on obtiens:
+\\
+\begin{center}
+	\includegraphics[scale=0.5]{./img/gauss/dingdong005.png} \\
+\end{center}
+
+Les valeurs sont assez proches, mais les valeurs à 1 et -1 se retrouvent plus proches de 0 et inversement, les valeurs proches de 0 en sont encore plus éloignées que ces dernières.
+La méthode n'est donc pas stable pour ce système linéaire.
+\\
+\\
+\textbf{\underline{\large{Moler :}}}
+\\
+\\
+\begin{center}
+	\includegraphics[scale=0.5]{./img/gauss/TestMoler.png} \\
+\end{center}
+
+Ici on a Ding Dong carré de dimension 4, et le système échelonné ci-dessous.
+Le programme trouve la bonne solution.
+La méthode a encore une complexité pratique de 34 opérations sur ce système, et qu'il le résout en 0.349 seconde environ.
+\\
+La fonction d'erreur est nulle (on trouve les valeurs exactes).
+Résolvons le même système en faisant varier les valeurs dans b de +0.005, on obtiens:
+\\
+\begin{center}
+	\includegraphics[scale=0.5]{./img/gauss/moler005.png} \\
+\end{center}
+
+Or les valeurs restent sensiblement identiques, ce qui indique que la méthode est stable sur ce système.
+\\
+\\
+\textbf{\underline{\large{Franc :}}}
+\\
+\\
+\begin{center}
+	\includegraphics[scale=0.5]{./img/gauss/TestFranc.png} \\
+\end{center}
+
+Ici on a Ding Dong carré de dimension 4, et le système échelonné ci-dessous.
+Le programme trouve la matrice solution attendue.
+On remarque que la méthode a une complexité pratique de 34 opérations sur ce système, et qu'il le résout en 0.221 seconde environ.
+\\
+La fonction d'erreur est nulle (on trouve les valeurs exactes).\\
+Résolvons le même système en faisant varier les valeurs dans b de +0.005, on obtiens:
+\\
+\begin{center}
+	\includegraphics[scale=0.5]{./img/gauss/franc005.png} \\
+\end{center}
+
+Or les valeurs restent sensiblement identiques, ce qui indique que la méthode
+est stable sur ce système linéaire également.
+
+\clearpage
+
 \subsection{Cholesky}
 
 \subsubsection{Principe}
@@ -159,9 +383,7 @@ Dans la fonction \textit{main} on initialise un matrice de taille
 \textbf{LEN} qui est une constante pré-processeur. Les valeurs dans la matrice
 dépendent de la constante \textbf{EXAMPLE} qui permet de déterminer
 l’initialisation de la matrice via une fonction qui se situe dans le fichier
-\textit{matrix.c}. Il y a en tout 8 matrices de testes qui sont celle demandé
-dans la fiche de TP (chaque fonction remplit le tableau en fonction
-de la définition de la matrice).
+\textit{matrix.c}.
 
 \begin{lstlisting}
   float *solus = malloc(LEN * sizeof(float));
@@ -179,9 +401,11 @@ de la définition de la matrice).
   solver_cholesky(matrix, solus, b, LEN);
 \end{lstlisting}
 
+\clearpage
+
 \subsubsection{Calcule de la matrice R}
 
-Ensuite on calcule la matrice $R$ (le tableau à deux dimensions \textit{r}) à
+On calcule la matrice $R$ (le tableau à deux dimensions \textit{r}) à
 l'aide de la fonction nommée \textbf{make\_R} qui suit l'algorithme ci-dessus. A
 noter que cette fonction renvoi une erreur si la matrice en entrée n'est pas
 définie positive ce qui stop le programme car le système n'est pas résolvable
@@ -267,7 +491,7 @@ Cette fonction fait appelle à plusieurs autres fonctions:
 \item \textbf{transpose} qui transpose la matrice qui lui est donnée en argument
 \end{itemize}
 
-Observons plus en détail la résolution du premier sous-système:
+Résolution du premier sous\_système en détail:
 
 \begin{lstlisting}
   for (i = 0; i < n; i++) {
@@ -291,7 +515,7 @@ Nous résolvons $Ry = b$ donc:
 
 \[y_{i} = \frac{b_{i} - \sum_{j=1}^{i}}{a_{ii}}\]
 
-Ce qui se fait à l'aide des deux boucles ci-dessus.
+Ce qui se fait à l'aide des deux boucles ci-dessus.\\
 
 A noter que ce programme alloue plus de mémoire que le précédent à cause de
 l'utilisation du tableau \textbf{r} ce qui pourrait être problématique si on
@@ -302,7 +526,8 @@ travail avec des matrices de grandes taille.
 \begin{itemize}
 \item Bord \\
   \includegraphics[scale=0.5]{./img/cholesky/bord.png} \\
-  La méthode ne converge pas car la matrice n'est pas à diagonale dominante.
+  La méthode ne converge pas car la matrice n'est pas à diagonale dominante. Les
+  vraies solutions du système sont:
   $x_{1} = \frac{1}{8} = 0.125 , x_{2} = 1 , x_{3} = 1 , x_{4} = 1$
 \item Ding Dong \\
   \includegraphics[scale=0.5]{./img/cholesky/ding_dong.png} \\
@@ -321,15 +546,40 @@ travail avec des matrices de grandes taille.
   \[\frac{\parallel x_{c} \parallel - \parallel x_{p} \parallel}{\parallel x_{c}
     \parallel}\]
   
-  Ici, on affiche aussi le nombre d'itérations effectué par le programme (pour
-  une matrice $3 \times 3$ sans compter l'affichage de la matrice).
+  On constate en observant ces test qu'il y a une incohérence dans le nombre
+  d'itérations, en effet, pour une matrice de même taille, cholesky devrait
+  mettre approximativement deux fois mois d'itérations pour trouver la solution
+  (si on se réfère à la complexité théorique). Si on observe le code en annexe,
+  on voit que cela reste correcte car pour \textbf{gauss} on compte les
+  opérations uniquement sur les lignes et avec \textbf{cholesky} on compte les
+  opérations sur les valeurs donc gauss fait bien deux fois plus d'itérations
+  que cholesky.
 
-  Enfin on affiche le temps d’exécution en seconde.
+  De plus, le temps d’exécution de gauss est nettement plus important que celui
+  de cholesky ce qui est incohérence et qui traduit certainement une erreur
+  d'optimisation dans gauss.
 \end{itemize}
 
 \subsection{Conclusion sur les méthodes de résolution directes}
 
-\textbf{j'aime les chats!!!}
+ Pour conclure, Gauss permet de trouver une solution exacte, excepté si les
+ coefficients sont des valeurs extrêmes (les approximations de la machine fausse
+ le résultat de cette méthode) et est stable aux écart de valeurs en
+ général. Cependant sa complexité est un problème, en effet on ne peut pas
+ utiliser efficacement cette méthode sur des matrices à très grande dimensions.
+ \\
+ \\
+ La méthode de Choleski a une complexité deux fois plus basse que celle de
+ Gauss (donc deux fois plus rapide en théorie), se plus elle est stable aux
+ écart de valeurs. Cependant elle est limité par la nature des matrices qu'on
+ lui soumet, si une matrice n'est pas définie positive, on ne peut pas appliquer
+ cette méthode au système linéaire (on ferait donc des opérations inutiles en
+ l'utilisant ainsi).
+ \\
+ \\
+ Ainsi pour les matrices définies positives, il vaut
+ mieux utiliser la méthode de Choleski plus efficace, sinon la méthode du pivot
+ de Gauss est utile pour ces autres cas.
 
 \section{algorithmes itératifs}
 
@@ -338,12 +588,54 @@ plus en plus précise à chaque itération. Ils partent d'un point de départ
 arbitraire (un vecteur arbitraire) et vont converger vers la solution du
 système.
 
+A noter que les formules utilisées par ces deux méthodes sont obtenues en
+divisant la matrice $A$ du système en trois sous-matrices $D$, $-E$ et $-F$ où
+$D$ est une matrice diagonale composée uniquement de la diagonale de $A$. $-E$
+est une matrice triangulaire inférieure composée des éléments inférieures de $A$
+et $-F$ est une matrice triangulaire supérieure composée des éléments supérieurs
+de $A$.
+
+\testit{Exemple}
+
+\[
+A = 
+\begin{pmatrix}
+  1 & 1 & 1\\
+  1 & 2 & 2\\
+  1 & 2 & 3\\
+\end{pmatrix} \Rightarrow
+D =
+\begin{pmatrix}
+  1 & 0 & 0\\
+  0 & 2 & 0\\
+  0 & 0 & 3\\
+\end{pmatrix},
+-E =
+\begin{pmatrix}
+  0 & 0 & 0\\
+  1 & 0 & 0\\
+  1 & 2 & 0\\
+\end{pmatrix} et
+-F =
+\begin{pmatrix}
+  0 & 1 & 1\\
+  0 & 0 & 2\\
+  0 & 0 & 0\\
+\end{pmatrix}
+\]
+
+\clearpage
+
 \subsection{Jacobi}
 
 \subsubsection{Principe}
 
 Cet algorithme détermine les solutions du système $Ax = b$ en utilisant la
 formule suivante:
+
+\[x^{(k+1)} = D^{-1}(E+F)x^{(k)} + D^{-1}b\]
+
+En utilisant les matrices $D$, $-E$ et $-F$ définies ci-dessus, ce qui donne:
 
 \[x_{i}^{(k+1)} = \frac{b_{i} - \sum_{j=1}^{i-1}a_{ij}x_{j}^{(k)} -
   \sum_{j=i+1}^{n}a_{ij}x_{j}^{(k)}}{a_{ii}}\]
@@ -401,7 +693,7 @@ void jacobi(float **matrix, float *b, float *solus_k, int n) {
 Cette fonction utilise le même principe que l'algorithme ci dessus, elle
 fait appel à une fonction \textit{test} qui retourne $\parallel x^{(k+1)} -
 x^{(k)} \parallel \leqslant \varepsilon$ qui détermine l'arrêt (où sinon la
-fonction s'arrête d'itérer à un nombre de tours maximum). A la fin =, on affiche
+fonction s'arrête d'itérer à un nombre de tours maximum). A la fin, on affiche
 le nombre de tours effectués pour avoir un idée de la vitesse de convergence.
 
 \subsection{Gauss-seidel}
@@ -412,6 +704,10 @@ Cette méthode repose sur un principe similaire à celle de \textit{Jacobi},
 cependant, elle utilises les solutions $x^{(k+1)}$ au fur et à mesure qu'elle
 les calcules, ce qui lui permet de converger plus vite et donc de trouver une
 solution plus rapidement. La formule utilisée par la méthode est la suivante:
+
+\[x^{(k+1)} = D^{-1}(Ex^{(k+1)} + fx^{(k)} + b)\]
+
+Ce qui donne:
 
 \[x_{i}^{(k+1)} = \frac{b_{i} - \sum_{j=1}^{i-1}a_{ij}x_{j}^{\textbf{(k+1)}} -
   \sum_{j=i+1}^{n}a_{ij}x_{j}^{(k)}}{a_{ii}}\]
@@ -465,8 +761,9 @@ void gauss_seidel(float **matrix, float *b, float *solus_k, int n) {
 }
 \end{lstlisting}
 
-La modification est au niveau de la ligne \textbf{10}, on utilise $x^{(K+1)}$ au
-lieu de $x^{(k)}$
+La modification est au niveau de la ligne \textbf{10} où on utilise maintenant
+deux boucles la première calcule $b - \sum_{j=1}^{i-1}a_{ij}x_{j}^{\textbf{(k+1)}}$
+et la deuxième $b - \sum_{j=i+1}^{n}a_{ij}x_{j}^{(k)}$ puis on divise par $a_{ii}$.
 
 \subsection{Comparaison des résultats}
 
@@ -490,13 +787,13 @@ Résolution de:
   19\\
   11\\
 \end{pmatrix}
-\]
+\]\\
 
-Voici la solution trouvée par \textbf{jacobi}:
+Voici la solution trouvée par \textbf{Jacobi}:
 
 \includegraphics[scale=0.5]{./img/jacobi/jac_ex_1.png}
 
-Voici la solution trouvée par \textbf{gauss seidel}:
+Voici la solution trouvée par \textbf{Gauss Seidel}:
 
 \includegraphics[scale=0.5]{./img/gauss_seidel/g_e_ex_1.png}
 
@@ -504,28 +801,71 @@ On constate que la solution trouvée avec les deux méthodes et la même et si o
 regarde le nombre de tours effectués, on voit que \textbf{gauss-seidel} converge
 presque deux fois plus vite que \textbf{jacobi}. Cependant, on constate tout de
 même que le temps d’exécution du programme est presque le même. La solution
-n'est pas arrondie, elle est exacte.
+n'est pas arrondie, elle est exacte.\\
 
-Résolvons le même système en faisant varier les valeurs dans b de $+0.005$:
+Résolvons le même système en faisant varier les valeurs dans b de $+0.005$:\\
 
-Voici la solution trouvée par \textbf{jacobi}:
+Voici la solution trouvée par \textbf{Jacobi}:
 
 \includegraphics[scale=0.5]{./img/jacobi/jac_ex_1_mod.png}
 
-Voici la solution trouvée par \textbf{gauss seidel}:
+Voici la solution trouvée par \textbf{Gauss Seidel}:
 
 \includegraphics[scale=0.5]{./img/gauss_seidel/g_e_ex_1_mod.png}
 
 On constate que les résultats ainsi que les temps d’exécution (légère variation
 pour gauss seidel) et le nombre d'itérations n'ont pas beaucoup variés, donc la
 modification effectuée sur b sont bien gérées par le programme donc les méthodes
-sont stables.
+sont stables pour ce système.
+
+\subsubsection{Autre système}
+
+Résolution du système suivant:
+
+\[
+\begin{pmatrix}
+  4 & 1 & -2\\
+  -1 & 3 & 0\\
+  -2 & -5 & 8\\
+\end{pmatrix}X =
+\begin{pmatrix}
+  8\\
+  3\\
+  8\\
+\end{pmatrix}
+\]
+
+
+Solutions trouvée par \textbf{Jacobi}:
+
+\includegraphics[scale=0.5]{./img/jacobi/jac_ex_4.png}\\
+
+Solutions trouvée par \textbf{Gauss Seidel}:
+
+\includegraphics[scale=0.5]{./img/gauss_seidel/g_e_ex_4.png}\\
+
+On constate encore une fois que \textbf{Jacobi} itère plus de fois que
+\textbf{gauss seidel} mais que les temps d’exécution des deux programmes sont
+toujours très proches. De plus, le programme trouve toujours une solution
+précise.
+
+Résolvons le même système en faisant varier les valeurs dans b de $+0.005$:\\
+
+Voici la solution trouvée par \textbf{Jacobi}:
+
+\includegraphics[scale=0.5]{./img/jacobi/jac_ex_1_mod.png}
+
+Voici la solution trouvée par \textbf{Gauss Seidel}:
+
+\includegraphics[scale=0.5]{./img/gauss_seidel/g_e_ex_1_mod.png}
+
+On constate à nouveau la stabilité des méthodes sur cet exemple.
 
 \subsubsection{Une Erreur}
 
 Avec ce test, on voit que si la matrice ne respecte pas les contrainte requises
-par les méthodes, celle-ci tournes à l'infini sans jamais converger vers la
-solution du système (le programme s'arrête car la fonction est limité à 100 tours).
+par les méthodes, celles-ci tournes à l'infini sans jamais converger vers la
+solution du système (le programme s'arrête car la fonction est limité à 100 tours).\\
 
 Résolution de:
 
@@ -540,7 +880,7 @@ Résolution de:
   -1\\
   3\\
 \end{pmatrix}
-\]
+\]\\
 
 Voici la solution trouvée par \textbf{jacobi}:
 
@@ -549,6 +889,31 @@ Voici la solution trouvée par \textbf{jacobi}:
 Voici la solution trouvée par \textbf{gauss seidel}:
 
 \includegraphics[scale=0.5]{./img/gauss_seidel/g_e_fail.png}
+
+Les solutions trouvées sont incohérentes, les vraies solutions du système sont:
+$x_{1} = \frac{76}{3} \approx 25,333333333$,
+$x_{2} = \frac{-8}{3} \approx -2,666666667$ et
+$x_{3} = \frac{-31}{3} \approx 10,333333333$
+
+
+\subsection{Conclusion sur les méthodes itératives}
+
+Le principal défaut de ces méthodes est qu'elles ne converges pas pour tous les
+systèmes, en effet, si la matrice n'est pas à diagonale dominante ou symétrique
+et définie positive (pour Gauss Seidel), ces méthodes ne trouverons pas de
+solutions aux système et bouclerons à l'infini si le programme n'est pas prévu
+pour s'arrêter à un nombre maximum d'itérations.
+\\
+\\
+Cependant, ces deux méthodes sont bien plus précises que les méthodes directes
+et sont donc efficaces pour palier au problème du manque de précision et
+l'accumulation d'erreurs de calcules dues à l'utilisation des flottants dans les
+ordinateurs du fait que la solution est améliorée à chaque itération. La
+précision de la solution dépend de la précision demandé dans le programme qui
+est limité par la précision des flottants et la mémoire de l'ordinateur. A noter
+que plus la précision demandé est élevée, plus le temps d’exécution sera grand,
+cependant, en théorie, sans prendre en compte les faiblesses de la machine, si
+les méthodes converge, on peut obtenir une précision infinie.
 
 \clearpage
 
