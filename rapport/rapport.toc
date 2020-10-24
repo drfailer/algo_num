@@ -1,5 +1,5 @@
 \babel@toc {nil}{}
-\contentsline {section}{\numberline {1}Algorithmiques directes}{2}%
+\contentsline {section}{\numberline {1}Algorithmes directes}{2}%
 \contentsline {subsection}{\numberline {1.1}Gauss}{2}%
 \contentsline {subsubsection}{\numberline {1.1.1}Principe}{2}%
 \contentsline {subsubsection}{\numberline {1.1.2}L'Algorithme du pivot de Gauss}{2}%
@@ -9,7 +9,7 @@
 \contentsline {subsubsection}{\numberline {1.2.1}Principe}{6}%
 \contentsline {subsubsection}{\numberline {1.2.2}L'Algorithme}{6}%
 \contentsline {subsubsection}{\numberline {1.2.3}Les Variables}{6}%
-\contentsline {subsubsection}{\numberline {1.2.4}Calcule de la matrice R}{7}%
+\contentsline {subsubsection}{\numberline {1.2.4}Calcul de la matrice R}{7}%
 \contentsline {subsubsection}{\numberline {1.2.5}Résolution des sous-systèmes}{7}%
 \contentsline {subsubsection}{\numberline {1.2.6}Les Tests}{8}%
 \contentsline {subsection}{\numberline {1.3}Conclusion sur les méthodes de résolution directes}{9}%
@@ -18,7 +18,7 @@
 \contentsline {subsubsection}{\numberline {2.1.1}Principe}{10}%
 \contentsline {subsubsection}{\numberline {2.1.2}L'algorithme}{10}%
 \contentsline {subsubsection}{\numberline {2.1.3}Implémentation en C}{10}%
-\contentsline {subsection}{\numberline {2.2}Gauss-seidel}{11}%
+\contentsline {subsection}{\numberline {2.2}Gauss Seidel}{11}%
 \contentsline {subsubsection}{\numberline {2.2.1}Le principe}{11}%
 \contentsline {subsubsection}{\numberline {2.2.2}L'algorithme}{11}%
 \contentsline {subsubsection}{\numberline {2.2.3}Le programme en C}{11}%

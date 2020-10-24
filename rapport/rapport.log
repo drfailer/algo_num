@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.7.15)  23 OCT 2020 11:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.7.15)  24 OCT 2020 16:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -689,17 +689,17 @@ File: ./img/prepisima.png Graphic file (type png)
 Package pdftex.def Info: ./img/prepisima.png  used on input line 543.
 (pdftex.def)             Requested size: 56.6148pt x 13.30046pt.
 [8 <./img/cholesky/bord.png> <./img/cholesky/ding_dong.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 565--583
+Underfull \hbox (badness 10000) in paragraph at lines 566--584
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 565--583
+Underfull \hbox (badness 10000) in paragraph at lines 566--584
 
  []
 
 ! Undefined control sequence.
-l.598 \testit
+l.599 \testit
              {Exemple}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -709,73 +709,73 @@ and I'll forget about whatever was undefined.
 
 File: ./img/prepisima.png Graphic file (type png)
 <use ./img/prepisima.png>
-Package pdftex.def Info: ./img/prepisima.png  used on input line 627.
+Package pdftex.def Info: ./img/prepisima.png  used on input line 628.
 (pdftex.def)             Requested size: 56.6148pt x 13.30046pt.
 [9 <./img/cholesky/chocho_test_final.png>]
 File: ./img/prepisima.png Graphic file (type png)
 <use ./img/prepisima.png>
-Package pdftex.def Info: ./img/prepisima.png  used on input line 707.
+Package pdftex.def Info: ./img/prepisima.png  used on input line 708.
 (pdftex.def)             Requested size: 56.6148pt x 13.30046pt.
  [10
 
 ]
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <8> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 725.
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 726.
 File: ./img/prepisima.png Graphic file (type png)
 <use ./img/prepisima.png>
-Package pdftex.def Info: ./img/prepisima.png  used on input line 775.
+Package pdftex.def Info: ./img/prepisima.png  used on input line 776.
 (pdftex.def)             Requested size: 56.6148pt x 13.30046pt.
  [11]
-Underfull \hbox (badness 10000) in paragraph at lines 790--791
+Underfull \hbox (badness 10000) in paragraph at lines 791--792
 
  []
 
 <./img/jacobi/jac_ex_1.png, id=95, 363.3575pt x 192.72pt>
 File: ./img/jacobi/jac_ex_1.png Graphic file (type png)
 <use ./img/jacobi/jac_ex_1.png>
-Package pdftex.def Info: ./img/jacobi/jac_ex_1.png  used on input line 794.
+Package pdftex.def Info: ./img/jacobi/jac_ex_1.png  used on input line 795.
 (pdftex.def)             Requested size: 181.6783pt x 96.35976pt.
 <./img/gauss_seidel/g_e_ex_1.png, id=96, 364.36125pt x 192.72pt>
 File: ./img/gauss_seidel/g_e_ex_1.png Graphic file (type png)
 <use ./img/gauss_seidel/g_e_ex_1.png>
 Package pdftex.def Info: ./img/gauss_seidel/g_e_ex_1.png  used on input line 79
-8.
+9.
 (pdftex.def)             Requested size: 182.18018pt x 96.35976pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 800--805
+Underfull \hbox (badness 10000) in paragraph at lines 801--806
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 806--807
+Underfull \hbox (badness 10000) in paragraph at lines 807--808
 
  []
 
 <./img/jacobi/jac_ex_1_mod.png, id=97, 365.365pt x 193.72375pt>
 File: ./img/jacobi/jac_ex_1_mod.png Graphic file (type png)
 <use ./img/jacobi/jac_ex_1_mod.png>
-Package pdftex.def Info: ./img/jacobi/jac_ex_1_mod.png  used on input line 810.
+Package pdftex.def Info: ./img/jacobi/jac_ex_1_mod.png  used on input line 811.
 
 (pdftex.def)             Requested size: 182.68205pt x 96.86163pt.
 <./img/gauss_seidel/g_e_ex_1_mod.png, id=98, 365.365pt x 192.72pt>
 File: ./img/gauss_seidel/g_e_ex_1_mod.png Graphic file (type png)
 <use ./img/gauss_seidel/g_e_ex_1_mod.png>
 Package pdftex.def Info: ./img/gauss_seidel/g_e_ex_1_mod.png  used on input lin
-e 814.
+e 815.
 (pdftex.def)             Requested size: 182.68205pt x 96.35976pt.
 File: ./img/prepisima.png Graphic file (type png)
 <use ./img/prepisima.png>
-Package pdftex.def Info: ./img/prepisima.png  used on input line 821.
+Package pdftex.def Info: ./img/prepisima.png  used on input line 822.
 (pdftex.def)             Requested size: 56.6148pt x 13.30046pt.
 [12 <./img/jacobi/jac_ex_1.png> <./img/gauss_seidel/g_e_ex_1.png> <./img/jacobi
 /jac_ex_1_mod.png> <./img/gauss_seidel/g_e_ex_1_mod.png>]
 <./img/jacobi/jac_ex_4.png, id=103, 294.09875pt x 154.5775pt>
 File: ./img/jacobi/jac_ex_4.png Graphic file (type png)
 <use ./img/jacobi/jac_ex_4.png>
-Package pdftex.def Info: ./img/jacobi/jac_ex_4.png  used on input line 841.
+Package pdftex.def Info: ./img/jacobi/jac_ex_4.png  used on input line 842.
 (pdftex.def)             Requested size: 147.04901pt x 77.28854pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 841--842
+Underfull \hbox (badness 10000) in paragraph at lines 842--843
 
  []
 
@@ -783,55 +783,55 @@ Underfull \hbox (badness 10000) in paragraph at lines 841--842
 File: ./img/gauss_seidel/g_e_ex_4.png Graphic file (type png)
 <use ./img/gauss_seidel/g_e_ex_4.png>
 Package pdftex.def Info: ./img/gauss_seidel/g_e_ex_4.png  used on input line 84
-5.
+6.
 (pdftex.def)             Requested size: 146.54713pt x 78.79417pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 845--846
+Underfull \hbox (badness 10000) in paragraph at lines 846--847
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 852--853
+Underfull \hbox (badness 10000) in paragraph at lines 853--854
 
  []
 
 File: ./img/jacobi/jac_ex_1_mod.png Graphic file (type png)
 <use ./img/jacobi/jac_ex_1_mod.png>
-Package pdftex.def Info: ./img/jacobi/jac_ex_1_mod.png  used on input line 856.
+Package pdftex.def Info: ./img/jacobi/jac_ex_1_mod.png  used on input line 857.
 
 (pdftex.def)             Requested size: 182.68205pt x 96.86163pt.
 File: ./img/gauss_seidel/g_e_ex_1_mod.png Graphic file (type png)
 <use ./img/gauss_seidel/g_e_ex_1_mod.png>
 Package pdftex.def Info: ./img/gauss_seidel/g_e_ex_1_mod.png  used on input lin
-e 860.
+e 861.
 (pdftex.def)             Requested size: 182.68205pt x 96.35976pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 866--869
+Underfull \hbox (badness 10000) in paragraph at lines 867--870
 
  []
 
 File: ./img/prepisima.png Graphic file (type png)
 <use ./img/prepisima.png>
-Package pdftex.def Info: ./img/prepisima.png  used on input line 870.
+Package pdftex.def Info: ./img/prepisima.png  used on input line 871.
 (pdftex.def)             Requested size: 56.6148pt x 13.30046pt.
 [13 <./img/jacobi/jac_ex_4.png> <./img/gauss_seidel/g_e_ex_4.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 883--884
+Underfull \hbox (badness 10000) in paragraph at lines 884--885
 
  []
 
 <./img/jacobi/jac_fail.png, id=108, 304.13625pt x 153.57375pt>
 File: ./img/jacobi/jac_fail.png Graphic file (type png)
 <use ./img/jacobi/jac_fail.png>
-Package pdftex.def Info: ./img/jacobi/jac_fail.png  used on input line 887.
+Package pdftex.def Info: ./img/jacobi/jac_fail.png  used on input line 888.
 (pdftex.def)             Requested size: 152.06775pt x 76.78668pt.
 <./img/gauss_seidel/g_e_fail.png, id=109, 275.0275pt x 155.58125pt>
 File: ./img/gauss_seidel/g_e_fail.png Graphic file (type png)
 <use ./img/gauss_seidel/g_e_fail.png>
 Package pdftex.def Info: ./img/gauss_seidel/g_e_fail.png  used on input line 89
-1.
+2.
 (pdftex.def)             Requested size: 137.51341pt x 77.79042pt.
 
-Overfull \hbox (0.58119pt too wide) in paragraph at lines 893--897
+Overfull \hbox (0.58119pt too wide) in paragraph at lines 894--898
 []\T1/cmr/m/n/10 Les solutions trouvées sont incohérentes, les vraies solutions
  du système sont: $\OML/cmm/m/it/10 x[] \OT1/cmr/m/n/10 = [] \OMS/cmsy/m/n/10 ^
 ^Y \OT1/cmr/m/n/10 25\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 333333333$\T1/cmr/m/n/1
@@ -839,13 +839,13 @@ Overfull \hbox (0.58119pt too wide) in paragraph at lines 893--897
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 901--917
+Underfull \hbox (badness 10000) in paragraph at lines 902--918
 
  []
 
 File: ./img/prepisima.png Graphic file (type png)
 <use ./img/prepisima.png>
-Package pdftex.def Info: ./img/prepisima.png  used on input line 918.
+Package pdftex.def Info: ./img/prepisima.png  used on input line 919.
 (pdftex.def)             Requested size: 56.6148pt x 13.30046pt.
 [14 <./img/jacobi/jac_fail.png> <./img/gauss_seidel/g_e_fail.png>]
 (./prog/gauss.c
@@ -1190,7 +1190,7 @@ Alternatively, save the file in UTF-8 using your editor or another tool
 )
 File: ./img/prepisima.png Graphic file (type png)
 <use ./img/prepisima.png>
-Package pdftex.def Info: ./img/prepisima.png  used on input line 928.
+Package pdftex.def Info: ./img/prepisima.png  used on input line 929.
 (pdftex.def)             Requested size: 56.6148pt x 13.30046pt.
  [17] (./prog/cholesky.c
 
@@ -1263,7 +1263,7 @@ Alternatively, save the file in UTF-8 using your editor or another tool
 )
 File: ./img/prepisima.png Graphic file (type png)
 <use ./img/prepisima.png>
-Package pdftex.def Info: ./img/prepisima.png  used on input line 936.
+Package pdftex.def Info: ./img/prepisima.png  used on input line 937.
 (pdftex.def)             Requested size: 56.6148pt x 13.30046pt.
  [19] (./prog/jacobi.c
 File: ./img/prepisima.png Graphic file (type png)
@@ -1275,7 +1275,7 @@ Package pdftex.def Info: ./img/prepisima.png  used on input line 72.
 ])
 File: ./img/prepisima.png Graphic file (type png)
 <use ./img/prepisima.png>
-Package pdftex.def Info: ./img/prepisima.png  used on input line 944.
+Package pdftex.def Info: ./img/prepisima.png  used on input line 945.
 (pdftex.def)             Requested size: 56.6148pt x 13.30046pt.
  [21] (./prog/gauss_seidel.c
 File: ./img/prepisima.png Graphic file (type png)
@@ -1287,7 +1287,7 @@ Package pdftex.def Info: ./img/prepisima.png  used on input line 72.
 ])
 File: ./img/prepisima.png Graphic file (type png)
 <use ./img/prepisima.png>
-Package pdftex.def Info: ./img/prepisima.png  used on input line 953.
+Package pdftex.def Info: ./img/prepisima.png  used on input line 954.
 (pdftex.def)             Requested size: 56.6148pt x 13.30046pt.
  [23]
 (./rapport.aux) ) 
@@ -1298,7 +1298,7 @@ Here is how much of TeX's memory you used:
  22047 multiletter control sequences out of 15000+600000
  551471 words of font info for 66 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 38i,17n,51p,383b,1868s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,17n,51p,377b,1868s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/drfailer/.texlive2019/texmf-var/fonts/pk/ljfour/jknapp
 en/ec/ectt0800.375pk> </home/drfailer/.texlive2019/texmf-var/fonts/pk/ljfour/jk
 nappen/ec/ecbx0700.600pk>{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1
@@ -1332,9 +1332,9 @@ texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf/fon
 ts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf/fonts/type1/public/cm-s
 uper/sfcc1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></
 usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb>
-Output written on rapport.pdf (24 pages, 622848 bytes).
+Output written on rapport.pdf (24 pages, 622682 bytes).
 PDF statistics:
- 458 PDF objects out of 1000 (max. 8388607)
+ 457 PDF objects out of 1000 (max. 8388607)
  168 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  101 words of extra memory for PDF output out of 10000 (max. 10000000)
